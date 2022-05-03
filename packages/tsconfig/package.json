@@ -1,11 +1,17 @@
 {
-  "name": "tsconfig",
+  "name": "@marmot-template/tsconfig",
   "version": "0.0.0",
-  "private": true,
+  "license": "BUSL-1.1",
   "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "base.json",
+    "node14.json",
     "nextjs.json",
-    "react-library.json"
+    "package-default.json",
+    "package-react.json",
+    "storybook.json"
   ]
 }
