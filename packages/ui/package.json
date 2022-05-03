@@ -1,14 +1,25 @@
 {
-  "name": "ui",
+  "name": "@marmot-template/ui",
   "version": "0.0.0",
-  "main": "./index.tsx",
-  "types": "./index.tsx",
+  "main": "src/index.ts",
+  "files": [
+    "src/**/*"
+  ],
+  "scripts": {
+    "format": "prettier --write \"**/*.{ts,tsx,.md}\"",
+    "lint": "cross-env TIMING=1 eslint src --fix",
+    "clean": "rm -rf .turbo && rm -rf node_modules"
+  },
   "license": "MIT",
+  "dependencies": {
+    "react": "18.0.0",
+    "react-dom": "18.0.0"
+  },
   "devDependencies": {
+    "@marmot-template/tsconfig": "workspace:*",
+    "@marmot-template/config": "workspace:*",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
-    "tsconfig": "workspace:*",
-    "config": "workspace:*",
     "typescript": "^4.5.3"
   }
 }
