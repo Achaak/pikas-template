@@ -1,0 +1,7 @@
+stories
+**/*.scss
+node_modules
+.vscode
+.yarn
+lib
+dist

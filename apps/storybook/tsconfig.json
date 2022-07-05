@@ -1,6 +1,6 @@
 {
-  "extends": "@marmot-template/tsconfig/nextjs.json",
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/stories/packagesui/modals/.stories.tsx"],
+  "extends": "@pikas-template/tsconfig/storybook.json",
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "rootDir": ".",

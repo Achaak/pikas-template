@@ -6,24 +6,21 @@
       "outputs": ["dist/**", ".next/**"]
     },
     "pre-lint": {
-      "dependsOn": ["^build"],
-      "outputs": []
+      "dependsOn": ["^build"]
     },
     "lint": {
-      "dependsOn": ["^pre-lint"],
-      "outputs": []
+      "dependsOn": ["^pre-lint"]
     },
     "start": {
-      "dependsOn": ["^build"],
-      "outputs": []
-    },
-    "format": {
-      "outputs": []
-    },
-    "dev": {
-      "cache": false
+      "dependsOn": ["^build"]
     },
     "clean": {
+      "cache": false
+    },
+    "format": {
+      "cache": false
+    },
+    "dev": {
       "cache": false
     }
   }
