@@ -1,0 +1,33 @@
+name: Test build
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Test build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.4.0
+
+      - name: Install Dependencies
+        run: pnpm i
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+
+      - name: Build
+        run: pnpm run build
