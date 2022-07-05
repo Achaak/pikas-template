@@ -5,7 +5,7 @@
     "build": "build-storybook",
     "dev": "start-storybook -p 6006",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
-    "lint": "eslint \"./**/*.{ts,tsx}\" --fix",
+    "lint": "cross-env TIMING=1 eslint \"./**/*.{ts,tsx}\" --fix",
     "start": "npx http-server ./storybook-static -p 3000",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf storybook-static"
   },
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@pikas-template/ui": "workspace:*",
+    "http-server": "^14.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "webpack": "^5.72.0",
@@ -43,7 +44,9 @@
     "@storybook/manager-webpack5": "^6.5.6",
     "@storybook/react": "^6.5.6",
     "@storybook/theming": "^6.5.6",
+    "@types/react": "^18.0.14",
     "babel-loader": "^8.2.5",
+    "cross-env": "^7.0.3",
     "eslint": "8.19.0",
     "prettier": "2.7.1",
     "typescript": "4.7.4"
