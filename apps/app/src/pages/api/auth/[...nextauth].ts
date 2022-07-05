@@ -1,5 +1,5 @@
 import { selectUserFull } from '@/selector/user';
-import { prisma } from '@/server/context';
+import { prisma } from '@/server/prisma';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import NextAuth from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
