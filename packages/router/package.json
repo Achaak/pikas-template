@@ -19,6 +19,7 @@
     "@pikas-template/common": "workspace:*"
   },
   "devDependencies": {
+    "@pikas-template/common": "workspace:*",
     "@pikas-template/config": "workspace:*",
     "@pikas-template/tsconfig": "workspace:*",
     "@types/node": "^18.0.1",
