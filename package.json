@@ -21,7 +21,7 @@
     "start:packages": "turbo run start --parallel --filter=./packages/*",
     "lint": "turbo run lint",
     "format": "turbo run format",
-    "postinstall": "husky install",
+    "prepare": "husky install",
     "clean": "turbo run clean && rm -rf node_modules",
     "migrate:deploy": "pnpm prisma migrate deploy",
     "migrate:dev": "pnpm prisma migrate dev",
