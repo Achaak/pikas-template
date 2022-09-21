@@ -1,5 +1,5 @@
 export const getBaseUrl = (): string => {
-  if (process.browser) {
+  if (typeof window !== undefined) {
     return '';
   }
   // reference for vercel.com

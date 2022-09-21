@@ -36,14 +36,15 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@pikas-template/prettier": "workspace:*",
     "@pikas-template/tsconfig": "workspace:*",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
     "cross-env": "^7.0.3",
+    "eslint": "^8.23.1",
     "eslint-config-custom": "workspace:*",
     "prettier": "^2.7.1",
     "tsup": "^6.2.3",
-    "@pikas-template/prettier": "workspace:*",
     "typescript": "^4.8.3"
   }
 }

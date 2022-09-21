@@ -32,7 +32,6 @@ importers:
       '@types/node': ^18.7.18
       '@types/react': 18.0.20
       cross-env: ^7.0.3
-      dotenv-flow: ^3.2.0
       eslint: 8.23.1
       eslint-config-custom: workspace:*
       next: 12.3.1
@@ -62,7 +61,6 @@ importers:
       '@trpc/next': 9.27.2_q6zioqap35hgke6xl77szo7ghe
       '@trpc/react': 9.27.2_e7pohnznr4qdgpqc5x4q3pmfcu
       '@trpc/server': 9.27.2
-      dotenv-flow: 3.2.0
       next: 12.3.1_biqbaboplfbrettd7655fr4n2y
       next-auth: 4.10.3_biqbaboplfbrettd7655fr4n2y
       next-pwa: 5.6.0_next@12.3.1
@@ -299,6 +297,7 @@ importers:
       '@types/react': ^18.0.20
       '@types/react-dom': ^18.0.6
       cross-env: ^7.0.3
+      eslint: ^8.23.1
       eslint-config-custom: workspace:*
       prettier: ^2.7.1
       react: 18.2.0
@@ -320,6 +319,7 @@ importers:
       '@types/react': 18.0.20
       '@types/react-dom': 18.0.6
       cross-env: 7.0.3
+      eslint: 8.23.1
       eslint-config-custom: link:../eslint-config-custom
       prettier: 2.7.1
       tsup: 6.2.3_typescript@4.8.3
@@ -7689,16 +7689,10 @@ packages:
     resolution: {integrity: sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==}
     dev: true
 
-  /dotenv-flow/3.2.0:
-    resolution: {integrity: sha512-GEB6RrR4AbqDJvNSFrYHqZ33IKKbzkvLYiD5eo4+9aFXr4Y4G+QaFrB/fNp0y6McWBmvaPn3ZNjIufnj8irCtg==}
-    engines: {node: '>= 8.0.0'}
-    dependencies:
-      dotenv: 8.6.0
-    dev: false
-
   /dotenv/8.6.0:
     resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
     engines: {node: '>=10'}
+    dev: true
 
   /duplexer/0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==}
