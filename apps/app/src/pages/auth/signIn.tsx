@@ -1,5 +1,3 @@
-import { AuthLayout } from '@/components/layouts/auth';
-import type { NextPageWithLayout } from '@/pages/_app';
 import { Button } from '@pikas-template/ui/dist/components/inputs/button/index';
 import { Textfield } from '@pikas-template/ui/dist/components/inputs/textfield/index';
 import { IconByName } from '@pikas-template/ui/dist/core/pikas-ui/Icons';
@@ -11,7 +9,9 @@ import { getCsrfToken, getProviders, signIn } from 'next-auth/react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useI18nContext } from '@pikas-template/translate';
-import { globalNamespaces } from '@/configs/globalNamespaces';
+import { AuthLayout } from '../../components/layouts/auth';
+import { globalNamespaces } from '../../configs/globalNamespaces';
+import type { NextPageWithLayout } from '../_app';
 
 const ProviderContainer = styled('div', {
   display: 'flex',

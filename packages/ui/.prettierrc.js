@@ -1,4 +1,3 @@
 module.exports = {
-  root: true,
-  extends: ["custom/eslint-preset"],
+  ...require("@pikas-template/prettier"),
 };

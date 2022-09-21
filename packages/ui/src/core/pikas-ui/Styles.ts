@@ -1,1 +1,1 @@
-export * from "@pikas-ui/styles";
+export * from '@pikas-ui/styles';

@@ -1,7 +1,7 @@
-import { setMe } from '@/store/reducers/user/actions';
 import { styled } from '@pikas-template/ui/dist/core/pikas-ui/Styles';
 import { signIn, useSession } from 'next-auth/react';
 import React, { useEffect } from 'react';
+import { setMe } from '../../../store/reducers/user/actions';
 
 const Container = styled('div', {
   backgroundColor: '$BACKGROUND',

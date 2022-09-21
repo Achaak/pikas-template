@@ -1,46 +1,46 @@
-version: "3"
+version: "3.8"
 
 services:
-  web:
-    container_name: web
+  app:
+    container_name: app
     build:
       context: .
-      dockerfile: ./apps/web/Dockerfile
+      dockerfile: ./apps/app/Dockerfile
       args:
-        - DATABASE_URL=mysql://root:@localhost:3306/turborepo
+        - DATABASE_URL=postgres://postgres:postgres:@localhost:5432/postgres
     restart: always
     ports:
       - 3000:3000
     depends_on:
-      - mysql
+      - database
+    links:
+      - database
     networks:
       - app_network
-    # environment:
-    #   - DATABASE_URL=mysql://root:@mysql:3306/turborepo
-  api:
-    container_name: api
-    build:
-      context: .
-      dockerfile: ./apps/api/Dockerfile
-    restart: always
-    ports:
-      - 3001:3001
-    networks:
-      - app_network
-  mysql:
+  # api:
+  #   container_name: api
+  #   build:
+  #     context: .
+  #     dockerfile: ./apps/api/Dockerfile
+  #   restart: always
+  #   ports:
+  #     - 3001:3001
+  #   networks:
+  #     - app_network
+  database:
     platform: linux/amd64
-    image: mysql:8.0.28
-    container_name: turborepo_mysql
+    image: postgres
+    container_name: turborepo_postgres
     restart: always
     ports:
-      - 3306:3306
+      - 5432:5432
     networks:
       - app_network
     environment:
-      MYSQL_DATABASE: turborepo
-      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      POSTGRES_USER: postgres
+      POSTGRES_PASSOWRD: postgres
     volumes:
-      - database:/var/lib/mysql
+      - database:/var/lib/postgresql/data
 
 volumes:
   database:

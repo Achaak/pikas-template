@@ -1,11 +1,11 @@
-import { store } from '@/store/store';
-import type { UserFull } from '@/types/user';
+import type { Session } from 'next-auth';
 import { userActions } from '.';
+import { store } from '../../store';
 import type { UserState } from './types';
 
 export const getUserState = (): UserState => store.getState().user;
 
-export const setMe = ({ me }: { me: UserFull | null }): void => {
+export const setMe = ({ me }: { me: Session['user'] | null }): void => {
   store.dispatch(userActions.setMe(me));
 };
 

@@ -1,5 +1,3 @@
-import type { AppRouter } from '@/server/routers/_app';
-import { getBaseUrl } from '@/utils/getBaseUrl';
 import { themeDefault } from '@pikas-template/ui/dist/styles/theme-default';
 import { themeDark } from '@pikas-template/ui/dist/styles/theme-dark';
 import { customGlobalCss } from '@pikas-template/ui/dist/styles/globalCss';
@@ -25,10 +23,12 @@ import React, { useEffect, useState } from 'react';
 import superjson from 'superjson';
 
 import SEO from '../../next-seo.config';
-import { StoreProvider } from '@/store/hooks';
-import { store } from '@/store/store';
 import { PikasUIProvider } from '@pikas-template/ui/dist/core/pikas-ui/Styles';
 import type { Session } from 'next-auth';
+import type { AppRouter } from '../server/routers/_app';
+import { StoreProvider } from '../store/hooks';
+import { store } from '../store/store';
+import { getBaseUrl } from '../utils/getBaseUrl';
 
 declare global {
   interface Window {

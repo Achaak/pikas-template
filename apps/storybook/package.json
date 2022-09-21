@@ -30,6 +30,7 @@
     "@types/node": "^18.7.15",
     "@types/react": "18.0.20",
     "@types/react-dom": "18.0.6",
+    "cross-env": "^7.0.3",
     "eslint": "8.23.1",
     "http-server": "^14.1.1",
     "prettier": "2.7.1",

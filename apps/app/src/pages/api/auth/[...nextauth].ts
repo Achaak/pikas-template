@@ -1,4 +1,3 @@
-import { selectUserFull } from '@/selector/user';
 import { prisma } from '@pikas-template/database';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import NextAuth from 'next-auth';
@@ -20,21 +19,21 @@ export default NextAuth({
   },
   callbacks: {
     async session({ session, user }) {
-      const userRes = await prisma.user.findUnique({
-        where: { id: user.id },
-        select: selectUserFull,
-      });
+      if (session.user) {
+        session.user.id = user.id;
 
-      if (!userRes) {
-        return session;
+        const userRes = await prisma.user.findUnique({
+          where: { id: user.id },
+          select: {
+            emailVerified: true,
+          },
+        });
+
+        if (userRes) {
+          session.user.emailVerified = userRes.emailVerified;
+        }
       }
-
-      return {
-        ...session,
-        user: {
-          ...userRes,
-        },
-      };
+      return session;
     },
   },
 });

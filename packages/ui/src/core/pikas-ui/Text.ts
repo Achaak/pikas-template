@@ -1,1 +1,1 @@
-export * from "@pikas-ui/text";
+export * from '@pikas-ui/text';

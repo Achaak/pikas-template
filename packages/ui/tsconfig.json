@@ -1,10 +1,9 @@
 {
-  "extends": "@pikas-template/tsconfig/package-react.json",
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "tsup.config.ts", "dist"],
+  "extends": "@pikas-template/tsconfig/react-library.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules", "tsup.config.ts"],
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "src",
-    "baseUrl": ".",
+    "rootDir": "./src",
+    "outDir": "./dist"
   }
 }

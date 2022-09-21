@@ -1,11 +1,11 @@
 import type { UserState } from './types';
 import type { PayloadAction, CaseReducer } from '@reduxjs/toolkit';
-import type { UserFull } from '@/types/user';
+import type { Session } from 'next-auth';
 
-export const setMe: CaseReducer<UserState, PayloadAction<UserFull | null>> = (
-  state,
-  action
-): void => {
+export const setMe: CaseReducer<
+  UserState,
+  PayloadAction<Session['user'] | null>
+> = (state, action): void => {
   state.me = action.payload;
 };
 

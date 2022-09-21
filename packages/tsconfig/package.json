@@ -1,17 +1,9 @@
 {
   "name": "@pikas-template/tsconfig",
   "version": "0.0.0",
-  "license": "BUSL-1.1",
-  "main": "index.js",
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "base.json",
-    "nextjs.json",
-    "node16.json",
-    "package-default.json",
-    "package-react.json",
-    "storybook.json"
-  ]
+  "private": true,
+  "license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	}
 }

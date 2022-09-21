@@ -1,1 +1,1 @@
-export * from "@pikas-ui/loader";
+export * from '@pikas-ui/loader';

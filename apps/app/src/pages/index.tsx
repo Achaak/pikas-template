@@ -1,9 +1,9 @@
-import { AppLayout } from '@/components/layouts/app';
-import { HomeContainer } from '@/components/pages/home';
-import { globalNamespaces } from '@/configs/globalNamespaces';
 import { useI18nContext } from '@pikas-template/translate';
 import { NextSeo } from 'next-seo';
 import React from 'react';
+import { AppLayout } from '../components/layouts/app';
+import { HomeContainer } from '../components/pages/home';
+import { globalNamespaces } from '../configs/globalNamespaces';
 
 import type { NextPageWithLayout } from './_app';
 

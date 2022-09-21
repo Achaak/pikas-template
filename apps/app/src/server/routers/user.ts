@@ -1,7 +1,7 @@
-import { selectUser } from '@/selector/user';
-import { createRouter } from '@/server/createRouter';
 import { TRPCError } from '@trpc/server';
 import { z } from 'zod';
+import { selectUser } from '../../selector/user';
+import { createRouter } from '../createRouter';
 
 export const userRouter = createRouter().query('byId', {
   input: z.object({

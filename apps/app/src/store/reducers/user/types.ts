@@ -1,5 +1,5 @@
-import type { UserFull } from '@/types/user';
+import type { Session } from 'next-auth';
 
 export type UserState = {
-  me: UserFull | null;
+  me: Session['user'] | null;
 };

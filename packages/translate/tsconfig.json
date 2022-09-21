@@ -1,12 +1,9 @@
 {
-  "extends": "@pikas-template/tsconfig/package-react.json",
-  "include": ["src"],
-  "exclude": ["node_modules"],
+  "extends": "@pikas-template/tsconfig/react-library.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules", "tsup.config.ts"],
   "compilerOptions": {
     "rootDir": "./src",
-    "outDir": "./dist",
-    "module": "commonjs",
-    "jsx": "react",
-    "suppressImplicitAnyIndexErrors": true,
+    "outDir": "./dist"
   }
 }
