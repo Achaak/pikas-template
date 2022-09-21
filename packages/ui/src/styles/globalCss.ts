@@ -1,34 +1,34 @@
-import { globalCss } from '@pikas-ui/styles';
+import { globalCss } from "@pikas-ui/styles";
 
 export const customGlobalCss = globalCss({
-  'html, body, #__next': {
-    fontFamily: '$roboto',
-    scrollBehavior: 'smooth',
-    color: '$BLACK',
+  "html, body, #__next": {
+    fontFamily: "$roboto",
+    scrollBehavior: "smooth",
+    color: "$BLACK",
   },
-  '*': {
+  "*": {
     margin: 0,
     padding: 0,
-    boxSizing: 'border-box',
+    boxSizing: "border-box",
   },
   li: {
-    listStyle: 'none',
+    listStyle: "none",
   },
   a: {
-    textDecoration: 'none',
+    textDecoration: "none",
   },
 
-  '::-webkit-scrollbar': {
-    width: '7px',
-    height: '7px',
-    borderRadius: '10px',
+  "::-webkit-scrollbar": {
+    width: "7px",
+    height: "7px",
+    borderRadius: "10px",
   },
-  '::-webkit-scrollbar-track': {
-    borderRadius: '10px',
-    backgroundColor: '$WHITE',
+  "::-webkit-scrollbar-track": {
+    borderRadius: "10px",
+    backgroundColor: "$WHITE",
   },
-  '::-webkit-scrollbar-thumb': {
-    background: '$GRAY',
-    borderRadius: '10px',
+  "::-webkit-scrollbar-thumb": {
+    background: "$GRAY",
+    borderRadius: "10px",
   },
 });

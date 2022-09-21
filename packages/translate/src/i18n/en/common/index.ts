@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { BaseTranslation } from '../../i18n-types';
+import { BaseTranslation } from '../../i18n-types.js';
 
 const en_common: BaseTranslation = {
   seo: {

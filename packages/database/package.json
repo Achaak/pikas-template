@@ -1,0 +1,39 @@
+{
+  "name": "@pikas-template/database",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf .turbo node_modules dist",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:push": "prisma db push",
+    "db:seed": "tsx src/seed.ts",
+    "dev": "tsup --watch",
+    "format": "prisma format",
+    "generate": "prisma generate",
+    "lint": "eslint ./src --fix",
+    "prebuild": "pnpm run generate",
+    "predev": "pnpm run generate",
+    "studio": "prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "eslint": "^8.23.1",
+    "eslint-config-custom": "workspace:*",
+    "prisma": "^4.3.1",
+    "@pikas-template/tsconfig": "workspace:*",
+    "tsup": "^6.2.3",
+    "tsx": "^3.9.0",
+    "typescript": "^4.8.3"
+  }
+}

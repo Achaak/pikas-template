@@ -1,10 +1,10 @@
 import { AuthLayout } from '@/components/layouts/auth';
 import type { NextPageWithLayout } from '@/pages/_app';
-import { Button } from '@pikas-template/ui/src/components/inputs/button';
-import { Textfield } from '@pikas-template/ui/src/components/inputs/textfield';
-import { IconByName } from '@pikas-template/ui/src/core/pikas-ui/Icons';
-import { APP_ROUTE_DEFAULT } from '@pikas-template/router/dist/app';
-import { styled } from '@pikas-template/ui/src/core/pikas-ui/Styles';
+import { Button } from '@pikas-template/ui/dist/components/inputs/button/index';
+import { Textfield } from '@pikas-template/ui/dist/components/inputs/textfield/index';
+import { IconByName } from '@pikas-template/ui/dist/core/pikas-ui/Icons';
+import { getLink } from '@pikas-template/router/dist/app';
+import { styled } from '@pikas-template/ui/dist/core/pikas-ui/Styles';
 import type { GetServerSideProps } from 'next';
 import type { Provider } from 'next-auth/providers';
 import { getCsrfToken, getProviders, signIn } from 'next-auth/react';
@@ -117,7 +117,7 @@ const SignIn: NextPageWithLayout<{
                 color={provider.id.toUpperCase() as never}
                 onClick={(): void => {
                   signIn(provider.id, {
-                    callbackUrl: APP_ROUTE_DEFAULT({ isUrl: true }),
+                    callbackUrl: getLink('home'),
                     redirect: true,
                   });
                 }}
@@ -134,7 +134,7 @@ const SignIn: NextPageWithLayout<{
         )}
       </ProviderContainer>
 
-      <Link href={APP_ROUTE_DEFAULT()} passHref>
+      <Link href={getLink('home')} passHref>
         <BackContainer>
           <IconByName name="bx:left-arrow-alt" size={20} color="BLACK" />
           <BackText>{LL.app_signIn['back-to-website']()}</BackText>

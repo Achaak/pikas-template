@@ -1,5 +1,6 @@
 {
-  "$schema": "https://unpkg.com/typesafe-i18n@5.6.0/schema/typesafe-i18n.json",
+  "adapter": "react",
+  "esmImports": true,
   "baseLocale": "en",
-  "adapter": "react"
+  "$schema": "https://unpkg.com/typesafe-i18n@5.13.0/schema/typesafe-i18n.json"
 }

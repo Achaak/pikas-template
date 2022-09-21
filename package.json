@@ -23,33 +23,27 @@
     "format": "turbo run format",
     "prepare": "husky install",
     "clean": "turbo run clean && rm -rf node_modules",
-    "migrate:deploy": "pnpm prisma migrate deploy",
-    "migrate:dev": "pnpm prisma migrate dev",
-    "migrate:dev:create": "pnpm prisma migrate dev --create-only",
-    "migrate:reset": "pnpm prisma migrate reset",
-    "migrate:resolve": "pnpm prisma migrate resolve",
-    "prisma": "cross-env NODE_ENV=${NODE_ENV:-development} dotenv-flow -- prisma",
-    "prisma:generate": "pnpm prisma generate",
-    "prisma:generate:watch": "pnpm prisma generate --watch",
-    "prisma:seed": "cross-env DEBUG='prisma*' pnpm prisma db seed",
-    "prisma:studio": "pnpm prisma studio"
-  },
-  "dependencies": {
-    "@prisma/client": "^4.3.0"
+    "db:migrate:deploy": "turbo run db:migrate:deploy",
+    "db:push": "turbo run db:push",
+    "db:seed": "turbo run db:seed",
+    "generate": "turbo run generate",
+    "test": "turbo run test",
+    "build:docker": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml build --parallel",
+    "start:docker": "docker-compose -f docker-compose.yml up -d"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
-    "dotenv-flow": "^3.2.0",
-    "dotenv-flow-cli": "^1.0.0",
-    "esbuild-register": "^3.3.3",
+    "eslint-config-custom": "workspace:*",
     "husky": "^8.0.1",
-    "nexus-prisma": "^0.36.0-next.2",
-    "prisma": "^4.3.0",
-    "turbo": "^1.4.3"
+    "tsx": "^3.9.0",
+    "turbo": "^1.4.7"
   },
   "engines": {
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
-  "packageManager": "pnpm@7.4.0"
+  "prisma": {
+    "schema": "packages/database/prisma/schema.prisma",
+    "seed": "tsx packages/database/src/seed.ts"
+  },
+  "packageManager": "pnpm@7.11.0"
 }

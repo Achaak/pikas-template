@@ -5,16 +5,21 @@ const withPlugins = require('next-compose-plugins');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
-const withTM = require('next-transpile-modules')([
-  '@pikas-template/ui',
-  '@pikas-template/translate',
-]);
+const { join } = require('path');
+const withTM = require('next-transpile-modules')([]);
 
 const plugins = [withTM, withBundleAnalyzer, withPWA];
 
-/** @type {import('next').NextConfig} */
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
+  swcMinify: true,
   reactStrictMode: true,
+  output: 'standalone',
+  experimental: {
+    outputFileTracingRoot: join(__dirname, '../../'),
+  },
   i18n: {
     locales: ['en', 'fr'],
     defaultLocale: 'en',

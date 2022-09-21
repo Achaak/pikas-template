@@ -1,4 +1,4 @@
-import { styled } from '@pikas-template/ui/src/core/pikas-ui/Styles';
+import { styled } from '@pikas-template/ui/dist/core/pikas-ui/Styles';
 import React from 'react';
 
 const Container = styled('div', {

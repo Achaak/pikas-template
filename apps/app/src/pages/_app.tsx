@@ -1,18 +1,18 @@
 import type { AppRouter } from '@/server/routers/_app';
 import { getBaseUrl } from '@/utils/getBaseUrl';
-import { themeDefault } from '@pikas-template/ui/src/styles/theme-default';
-import { themeDark } from '@pikas-template/ui/src/styles/theme-dark';
-import { customGlobalCss } from '@pikas-template/ui/src/styles/globalCss';
+import { themeDefault } from '@pikas-template/ui/dist/styles/theme-default';
+import { themeDark } from '@pikas-template/ui/dist/styles/theme-dark';
+import { customGlobalCss } from '@pikas-template/ui/dist/styles/globalCss';
 import type {
   Locales,
   Namespaces,
-} from '@pikas-template/translate/src/i18n/i18n-types';
-import { CustomTypesafeI18n } from '@pikas-template/translate/src/CustomTypesafeI18n/namespaceProvider';
+} from '@pikas-template/translate/dist/i18n/i18n-types';
+import { CustomTypesafeI18n } from '@pikas-template/translate/dist/CustomTypesafeI18n/namespaceProvider';
 import {
   baseLocale,
   detectLocale,
-} from '@pikas-template/translate/src/i18n/i18n-util';
-import { loadLocaleAsync } from '@pikas-template/translate/src/i18n/i18n-util.async';
+} from '@pikas-template/translate/dist/i18n/i18n-util';
+import { loadLocaleAsync } from '@pikas-template/translate/dist/i18n/i18n-util.async';
 import { httpBatchLink } from '@trpc/client/links/httpBatchLink';
 import { loggerLink } from '@trpc/client/links/loggerLink';
 import { withTRPC } from '@trpc/next';
@@ -27,7 +27,8 @@ import superjson from 'superjson';
 import SEO from '../../next-seo.config';
 import { StoreProvider } from '@/store/hooks';
 import { store } from '@/store/store';
-import { PikasUIProvider } from '@pikas-template/ui/src/core/pikas-ui/Styles';
+import { PikasUIProvider } from '@pikas-template/ui/dist/core/pikas-ui/Styles';
+import type { Session } from 'next-auth';
 
 declare global {
   interface Window {
@@ -45,11 +46,15 @@ export type NextPageWithLayout<
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
+} & {
+  pageProps: {
+    session?: Session | null | undefined;
+  } & AppProps['pageProps'];
 };
 
 const MyApp = ({
   Component,
-  pageProps,
+  pageProps: { session, ...pageProps },
   router,
 }: AppPropsWithLayout): JSX.Element => {
   const getLayout =
@@ -145,7 +150,7 @@ const MyApp = ({
       </Head>
       <DefaultSeo {...SEO} />
       <PikasUIProvider lightTheme={themeDefault} darkTheme={themeDark}>
-        <SessionProvider session={pageProps.session}>
+        <SessionProvider session={session}>
           <StoreProvider store={store}>
             {locale && (
               <CustomTypesafeI18n

@@ -1,7 +1,7 @@
 import type * as trpc from '@trpc/server';
 import type * as trpcNext from '@trpc/server/adapters/next';
 import { getSession } from 'next-auth/react';
-import { prisma } from './prisma';
+import { prisma } from '@pikas-template/database';
 
 /**
  * Creates context for an incoming request

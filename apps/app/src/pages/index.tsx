@@ -1,4 +1,5 @@
 import { AppLayout } from '@/components/layouts/app';
+import { HomeContainer } from '@/components/pages/home';
 import { useI18nContext } from '@pikas-template/translate';
 import { NextSeo } from 'next-seo';
 import React from 'react';
@@ -12,7 +13,7 @@ const Home: NextPageWithLayout = () => {
     <>
       <NextSeo description={LL.common.seo.description()} />
 
-      <span>Hello world</span>
+      <HomeContainer />
     </>
   );
 };

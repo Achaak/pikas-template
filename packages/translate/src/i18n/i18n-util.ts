@@ -14,13 +14,18 @@ import type {
   Namespaces,
   Translations,
   TranslationFunctions,
-} from './i18n-types';
+} from './i18n-types.js';
 
 export const baseLocale: Locales = 'en';
 
 export const locales: Locales[] = ['en', 'fr'];
 
 export const namespaces: Namespaces[] = ['app_signIn', 'common'];
+
+export const isLocale = (locale: string) => locales.includes(locale as Locales);
+
+export const isNamespace = (namespace: string) =>
+  namespaces.includes(namespace as Namespaces);
 
 export const loadedLocales = {} as Record<Locales, Translations>;
 

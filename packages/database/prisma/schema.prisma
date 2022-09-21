@@ -1,11 +1,16 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider             = "postgresql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
 }
 
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["interactiveTransactions", "metrics"]
+  previewFeatures = ["referentialIntegrity", "interactiveTransactions", "metrics"]
+  binaryTargets   = ["native", "linux-musl"]
 }
 
 model Account {

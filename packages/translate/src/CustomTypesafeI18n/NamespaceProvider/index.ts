@@ -1,1 +1,1 @@
-export * from './namespaceProvider';
+export * from './namespaceProvider.js';

@@ -1,4 +1,4 @@
-import { themeDefault } from '@pikas-template/ui';
+import { theme } from '@pikas-template/ui';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -10,23 +10,23 @@ export const parameters = {
     values: [
       {
         name: 'light',
-        value: themeDefault.colors.WHITE,
+        value: theme.colors.WHITE.value,
       },
       {
         name: 'dark',
-        value: themeDefault.colors.BLACK,
+        value: theme.colors.BLACK.value,
       },
       {
         name: 'primary',
-        value: themeDefault.colors.PRIMARY,
+        value: theme.colors.PRIMARY.value,
       },
       {
         name: 'primary-lightest-1',
-        value: themeDefault.colors.PRIMARY_LIGHTEST_1,
+        value: theme.colors.PRIMARY_LIGHTEST_1.value,
       },
       {
         name: 'gray-lightest-2',
-        value: themeDefault.colors.GRAY_LIGHTEST_2,
+        value: theme.colors.GRAY_LIGHTEST_2.value,
       },
     ],
   },

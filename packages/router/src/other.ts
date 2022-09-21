@@ -1,4 +1,4 @@
-export const OTHER_ROUTES = {
+export const otherRoutes = {
   facebook: '',
   twitter: '',
   linkedin: '',

@@ -1,85 +1,31 @@
-import {
-  darkTheme,
-  globalCss,
-  styled,
-  PikasUIProvider,
-} from '@pikas-template/ui/';
-import { Button } from '@pikas-template/ui/src/components/inputs/button';
-import type { ButtonProps } from '@pikas-template/ui/src/components/inputs/button';
+import { customGlobalCss } from '@pikas-template/ui';
+import type { ButtonProps } from '@pikas-template/ui/dist/components/inputs/button/index';
+import { Button } from '@pikas-template/ui/dist/components/inputs/button/index';
 import type { Story, Meta } from '@storybook/react';
-import type { IconProps } from '@pikas-template/ui/src/core/pikas-ui/Icons';
-import { IconByName } from '@pikas-template/ui/src/core/pikas-ui/Icons';
-
-const Container = styled('div', {
-  display: 'flex',
-});
 
 export default {
-  title: '@pikas-ui/button',
+  title: 'Components/Inputs/Button',
   component: Button,
-} as Meta<ButtonProps>;
+} as Meta;
 
 const Template: Story<ButtonProps> = (args) => {
-  globalCss();
+  customGlobalCss();
 
-  return (
-    <PikasUIProvider darkTheme={darkTheme}>
-      <Container>
-        <Button {...args}>Button</Button>
-      </Container>
-    </PikasUIProvider>
-  );
+  return <Button {...args} />;
 };
 
-const IconTest: React.FC<IconProps> = (props) => {
-  return <IconByName {...props} name="bx:baguette" />;
-};
-
-export const Default = Template.bind({});
-Default.args = {
+export const Squared = Template.bind({});
+Squared.args = {
   color: 'PRIMARY',
-  outlined: false,
-  padding: 'md',
-  disabled: false,
-  loading: false,
-  LeftIcon: undefined,
-  RightIcon: undefined,
-  borderRadius: 'md',
-  fontSize: 'EM-MEDIUM',
-  width: 'auto',
-  effect: 'opacity',
-  fontWeight: 'MEDIUM',
-  id: undefined,
-  form: undefined,
-  gap: 'md',
-  name: undefined,
-  onClick: console.log,
-  styles: {},
-  textTransform: 'none',
-  type: 'button',
-};
-
-export const WithIcon = Template.bind({});
-WithIcon.args = {
   children: 'Button',
-  color: 'PRIMARY',
-  outlined: true,
-  padding: 'md',
-  disabled: false,
-  loading: false,
-  LeftIcon: IconTest,
-  RightIcon: undefined,
-  borderRadius: 'md',
   fontSize: 'EM-MEDIUM',
-  width: 'auto',
-  effect: 'opacity',
-  fontWeight: 'MEDIUM',
-  id: undefined,
-  form: undefined,
-  gap: 'lg',
-  name: undefined,
-  onClick: console.log,
-  styles: {},
-  textTransform: 'none',
-  type: 'button',
+  effect: 'boxScale',
+};
+
+export const Rounded = Template.bind({});
+Rounded.args = {
+  color: 'PRIMARY',
+  children: 'Button',
+  borderRadius: 'round',
+  effect: 'boxScale',
 };

@@ -9,8 +9,8 @@ import type {
   Locales,
   TranslationFunctions,
   Translations,
-} from './i18n-types';
-import { loadedFormatters, loadedLocales } from './i18n-util';
+} from './i18n-types.js';
+import { loadedFormatters, loadedLocales } from './i18n-util.js';
 
 const { component: TypesafeI18n, context: I18nContext } = initI18nReact<
   Locales,

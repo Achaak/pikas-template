@@ -1,1 +1,3 @@
-module.exports = require('@pikas-template/config/prettier-preset')
+module.exports = {
+  ...require("@pikas-template/prettier"),
+};

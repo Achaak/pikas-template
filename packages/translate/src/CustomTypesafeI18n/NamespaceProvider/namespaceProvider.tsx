@@ -1,7 +1,7 @@
+import { useI18nContext } from '../../i18n/i18n-react.js';
+import type { Namespaces } from '../../i18n/i18n-types.js';
+import { loadNamespaceAsync } from '../../i18n/i18n-util.async.js';
 import React, { useEffect } from 'react';
-import { useI18nContext } from '../../i18n/i18n-react';
-import type { Namespaces } from '../../i18n/i18n-types';
-import { loadNamespaceAsync } from '../../i18n/i18n-util.async';
 
 export interface NamespaceProviderProps {
   namespaces?: Namespaces[];

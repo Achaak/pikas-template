@@ -2,16 +2,16 @@
 /* eslint-disable */
 
 import { initFormatters } from './formatters';
-import type { Locales, Translations } from './i18n-types';
+import type { Locales, Translations } from './i18n-types.js';
 import { loadedFormatters, loadedLocales, locales } from './i18n-util';
 
-import en from './en';
-import fr from './fr';
+import en from './en/index.js';
+import fr from './fr/index.js';
 
-import en_app_signIn from './en/app_signIn';
-import en_common from './en/common';
-import fr_app_signIn from './fr/app_signIn';
-import fr_common from './fr/common';
+import en_app_signIn from './en/app_signIn/index.js';
+import en_common from './en/common/index.js';
+import fr_app_signIn from './fr/app_signIn/index.js';
+import fr_common from './fr/common/index.js';
 
 const localeTranslations = {
   en: {
@@ -35,6 +35,5 @@ export const loadLocale = (locale: Locales): void => {
 
 export const loadAllLocales = (): void => locales.forEach(loadLocale);
 
-export const loadFormatters = (locale: Locales): void => {
-  loadedFormatters[locale] = initFormatters(locale);
-};
+export const loadFormatters = (locale: Locales): void =>
+  void (loadedFormatters[locale] = initFormatters(locale));
