@@ -11,6 +11,7 @@ import { getCsrfToken, getProviders, signIn } from 'next-auth/react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useI18nContext } from '@pikas-template/translate';
+import { globalNamespaces } from '@/configs/globalNamespaces';
 
 const ProviderContainer = styled('div', {
   display: 'flex',
@@ -148,7 +149,7 @@ SignIn.getLayout = (page: React.ReactNode): React.ReactNode => {
   return <AuthLayout>{page}</AuthLayout>;
 };
 
-SignIn.namespaces = ['app_signIn'];
+SignIn.namespaces = [...globalNamespaces, 'app_signIn'];
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const providers = await getProviders();

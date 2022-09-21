@@ -9,7 +9,7 @@
     "lint": "cross-env TIMING=1 next lint --fix",
     "format": "prettier --cache --write \"./**/*.{ts,tsx}\"",
     "clean": "rm -rf .turbo node_modules dist .next",
-    "analyze": "ANALYZE=true pnpm build"
+    "analyze": "cross-env ANALYZE=true pnpm build"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.4",
