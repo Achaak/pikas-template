@@ -1,6 +1,7 @@
 import { prisma } from '@pikas-template/database';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import NextAuth, { NextAuthOptions } from 'next-auth';
+import type { NextAuthOptions } from 'next-auth';
+import NextAuth from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
 import { env } from '../../../env/server.mjs';
 
