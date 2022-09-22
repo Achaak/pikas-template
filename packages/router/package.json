@@ -24,7 +24,7 @@
     "@pikas-template/prettier": "workspace:*",
     "@pikas-template/tsconfig": "workspace:*",
     "@types/node": "^18.7.18",
-    "@types/react": "18.0.20",
+    "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "cross-env": "^7.0.3",
     "eslint": "8.23.1",
