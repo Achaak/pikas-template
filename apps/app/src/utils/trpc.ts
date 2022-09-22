@@ -2,7 +2,7 @@ import { createTRPCProxyClient, httpBatchLink, loggerLink } from '@trpc/client';
 import { createTRPCNext } from '@trpc/next';
 import { env } from '../env/server.mjs';
 import type {} from '../pages/api/trpc/[trpc]';
-import { AppRouter } from '../server/routers/_app';
+import type { AppRouter } from '../server/routers/_app';
 
 function getBaseUrl(): string {
   if (typeof window !== 'undefined') {

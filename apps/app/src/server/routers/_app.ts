@@ -1,5 +1,5 @@
 import { initTRPC } from '@trpc/server';
-import { Context } from '../context';
+import type { Context } from '../context';
 import { protectedExampleRouter } from './protected';
 import { userRouter } from './user';
 
