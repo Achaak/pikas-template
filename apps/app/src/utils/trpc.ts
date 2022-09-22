@@ -1,18 +1,58 @@
-// ℹ️ Type-only import:
-// https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export
-import { createTRPCClient } from '@trpc/client';
-import { createReactQueryHooks } from '@trpc/react';
-import superjson from 'superjson';
-import type { AppRouter } from '../server/routers/_app';
-import { getBaseUrl } from './getBaseUrl';
+import { createTRPCProxyClient, httpBatchLink, loggerLink } from '@trpc/client';
+import { createTRPCNext } from '@trpc/next';
+import { env } from '../env/server.mjs';
+import type {} from '../pages/api/trpc/[trpc]';
+import { AppRouter } from '../server/routers/_app';
 
-/**
- * A set of strongly-typed React hooks from your `AppRouter` type signature with `createReactQueryHooks`.
- * @link https://trpc.io/docs/react#3-create-trpc-hooks
- */
-export const trpc = createReactQueryHooks<AppRouter>();
+function getBaseUrl(): string {
+  if (typeof window !== 'undefined') {
+    // browser should use relative path
+    return '';
+  }
+  if (process.env.VERCEL_URL) {
+    // reference for vercel.com
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  if (process.env.RENDER_INTERNAL_HOSTNAME) {
+    // reference for render.com
+    return `http://${process.env.RENDER_INTERNAL_HOSTNAME}:${process.env.PORT}`;
+  }
+  // assume localhost
+  return `http://localhost:${process.env.PORT ?? 3000}`;
+}
 
-export const trpcClient = createTRPCClient<AppRouter>({
-  url: `${getBaseUrl()}/api/trpc`,
-  transformer: superjson,
+const links = [
+  loggerLink({
+    enabled: (opts) =>
+      env.NODE_ENV === 'development' ||
+      (opts.direction === 'down' && opts.result instanceof Error),
+  }),
+  httpBatchLink({
+    /**
+     * If you want to use SSR, you need to use the server's full URL
+     * @link https://trpc.io/docs/ssr
+     **/
+    url: `${getBaseUrl()}/api/trpc`,
+  }),
+];
+
+export const trpcProxy = createTRPCProxyClient<AppRouter>({
+  links,
 });
+
+export const trpc = createTRPCNext<AppRouter>({
+  config({ ctx }) {
+    return {
+      links,
+      /**
+       * @link https://react-query-v3.tanstack.com/reference/QueryClient
+       **/
+      // queryClientConfig: { defaultOptions: { queries: { staleTime: 60 } } },
+    };
+  },
+  /**
+   * @link https://trpc.io/docs/ssr
+   **/
+  ssr: false,
+});
+// => { useQuery: ..., useMutation: ...}

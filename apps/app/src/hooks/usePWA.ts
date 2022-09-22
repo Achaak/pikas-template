@@ -1,5 +1,12 @@
 import { useEffect } from 'react';
 
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    workbox: any;
+  }
+}
+
 export const usePWA = () => {
   // This hook only run once in browser after the component is rendered for the first time.
   // It has same effect as the old componentDidMount lifecycle callback.

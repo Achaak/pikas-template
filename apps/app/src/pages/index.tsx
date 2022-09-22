@@ -10,9 +10,8 @@ import { trpc } from '../utils/trpc';
 import type { NextPageWithLayout } from './_app';
 
 const AuthShowcase: React.FC = () => {
-  const { data: secretMessage, isLoading } = trpc.useQuery([
-    'protected.getSecretMessage',
-  ]);
+  const { data: secretMessage, isLoading } =
+    trpc.protected.getSecretMessage.useQuery();
 
   const { data: sessionData } = useSession();
 

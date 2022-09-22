@@ -1,14 +1,13 @@
-import { createProtectedRouter } from '../createProtectedRouter';
+import { isAuth } from '../middlewares/isAuth';
+import { t } from './_app';
 
-// Example router with queries that can only be hit if the user requesting is signed in
-export const protectedExampleRouter = createProtectedRouter()
-  .query('getSession', {
-    resolve({ ctx }) {
-      return ctx.session;
-    },
-  })
-  .query('getSecretMessage', {
-    resolve({ ctx }) {
-      return 'He who asks a question is a fool for five minutes; he who does not ask a question remains a fool forever.';
-    },
-  });
+const authProcedure = t.procedure.use(isAuth);
+
+export const protectedExampleRouter = t.router({
+  getSession: authProcedure.query(({ ctx }) => {
+    return ctx.session;
+  }),
+  getSecretMessage: authProcedure.query(({ ctx }) => {
+    return 'He who asks a question is a fool for five minutes; he who does not ask a question remains a fool forever.';
+  }),
+});
