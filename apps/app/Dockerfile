@@ -21,7 +21,7 @@ RUN pnpm install -r --no-frozen-lockfile
 
 # Build the project
 COPY --from=builder /app/out/full/ .
-RUN pnpm turbo run build --filter=@pikas-template/app...
+RUN pnpm turbo build --filter=@pikas-template/app...
 
 FROM node:alpine AS runner
 WORKDIR /app
