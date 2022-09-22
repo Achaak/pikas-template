@@ -29,6 +29,8 @@ import type { AppRouter } from '../server/routers/_app';
 import { StoreProvider } from '../store/hooks';
 import { store } from '../store/store';
 import { getBaseUrl } from '../utils/getBaseUrl';
+import { usePWA } from '../hooks/usePWA';
+import { MetaHead } from '../components/global/MetaHead';
 
 declare global {
   interface Window {
@@ -70,83 +72,12 @@ const MyApp = ({
     loadLocaleAsync(l).then(() => setLocale(l));
   }, [router.locale]);
 
-  useEffect(() => {
-    if (
-      typeof window !== 'undefined' &&
-      'serviceWorker' in navigator &&
-      window.workbox !== undefined
-    ) {
-      const wb = window.workbox;
-
-      const promptNewVersionAvailable = (): void => {
-        wb.addEventListener('controlling', () => {
-          window.location.reload();
-        });
-
-        wb.messageSkipWaiting();
-      };
-
-      wb.addEventListener('waiting', promptNewVersionAvailable);
-    }
-  }, []);
+  usePWA();
 
   return (
     <>
       <Head>
-        <meta charSet="utf-8" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicons/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicons/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="194x194"
-          href="/favicons/favicon-194x194.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="192x192"
-          href="/favicons/android-chrome-192x192.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicons/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/favicons/site.webmanifest" />
-        <link
-          rel="mask-icon"
-          href="/favicons/safari-pinned-tab.svg"
-          color="#5bbad5"
-        />
-        <link rel="shortcut icon" href="/favicons/favicon.ico" />
-        <meta name="apple-mobile-web-app-title" content="Pikas-template" />
-        <meta name="application-name" content="Pikas-template" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta
-          name="msapplication-TileImage"
-          content="/favicons/mstile-144x144.png"
-        />
-        <meta
-          name="msapplication-config"
-          content="/favicons/browserconfig.xml"
-        />
-        <meta name="theme-color" content="#ffffff" />
-
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
+        <MetaHead />
       </Head>
       <DefaultSeo {...SEO} />
       <PikasUIProvider lightTheme={themeDefault} darkTheme={themeDark}>

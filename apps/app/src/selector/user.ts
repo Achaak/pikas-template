@@ -17,3 +17,11 @@ export const selectUserFull = createUserSelect({
   ...selectUser,
   emailVerified: true,
 });
+
+export type UserFull = Prisma.UserGetPayload<{
+  select: typeof selectUserFull;
+}>;
+
+export type User = Prisma.UserGetPayload<{
+  select: typeof selectUser;
+}>;

@@ -55,24 +55,35 @@ interface CustomProps {
 }
 
 export const AppLayout: React.FC<CustomProps> = ({ children }) => {
-  const { data, status } = useSession({
-    required: true,
-    onUnauthenticated: () => signIn(),
-  });
+  // const { data, status } = useSession({
+  //   required: true,
+  //   onUnauthenticated: () => signIn(),
+  // });
 
-  useEffect(() => {
-    setMe({ me: data?.user || null });
-  }, [data]);
+  // useEffect(() => {
+  //   setMe({ me: data?.user || null });
+  // }, [data]);
 
+  // return (
+  //   <>
+  //     {status === 'authenticated' && (
+  //       <Container>
+  //         <Content>
+  //           <Child>{children}</Child>
+  //         </Content>
+  //       </Container>
+  //     )}
+  //   </>
+  // );
   return (
     <>
-      {status === 'authenticated' && (
+      {
         <Container>
           <Content>
             <Child>{children}</Child>
           </Content>
         </Container>
-      )}
+      }
     </>
   );
 };

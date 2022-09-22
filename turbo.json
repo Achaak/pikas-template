@@ -28,8 +28,9 @@
       "cache": false
     },
     "database#build": {
-      "dependsOn": ["^build", "$NODE_ENV"],
-      "outputs": ["dist/**"]
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "env": ["NODE_ENV"]
     },
     "db:migrate:deploy": {
       "outputs": []

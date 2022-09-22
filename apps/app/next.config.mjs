@@ -1,5 +1,5 @@
 import { env } from './src/env/server.mjs';
-import withPWA from 'next-pwa';
+import WithPWA from 'next-pwa';
 import withPlugins from 'next-compose-plugins';
 import WithBundleAnalyzer from '@next/bundle-analyzer';
 import { join } from 'path';
@@ -11,6 +11,10 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const withTM = WithTM([]);
 const withBundleAnalyzer = WithBundleAnalyzer({
   enabled: env.ANALYZE === 'true',
+});
+const withPWA = WithPWA({
+  disable: env.NODE_ENV === 'development',
+  dest: 'public',
 });
 
 const plugins = [withTM, withBundleAnalyzer, withPWA];
@@ -37,9 +41,5 @@ export default defineNextConfig({
   i18n: {
     locales: ['en', 'fr'],
     defaultLocale: 'en',
-  },
-  pwa: {
-    disable: process.env.NODE_ENV === 'development',
-    dest: 'public',
   },
 });
