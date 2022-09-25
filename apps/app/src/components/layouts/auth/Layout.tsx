@@ -35,14 +35,12 @@ const Content = styled('div', {
   },
 });
 
-interface CustomProps {
+type CustomProps = {
   children?: React.ReactNode;
-}
-
-export const AuthLayout: React.FC<CustomProps> = ({ children }) => {
-  return (
-    <Container>
-      <Content>{children}</Content>
-    </Container>
-  );
 };
+
+export const AuthLayout: React.FC<CustomProps> = ({ children }) => (
+  <Container>
+    <Content>{children}</Content>
+  </Container>
+);

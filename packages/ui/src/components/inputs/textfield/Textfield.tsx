@@ -2,21 +2,14 @@ import type { TextfieldProps } from '@pikas-ui/textfield';
 import { Textfield as TextfieldPikasUI } from '@pikas-ui/textfield';
 import { forwardRef } from 'react';
 
-export {
+export type {
   TextfieldGap,
   TextfieldPadding,
-  TextfieldType,
-} from '@pikas-ui/textfield';
-export type {
-  TextfieldGapType,
-  TextfieldPaddingType,
   TextfieldProps,
-  TextfieldCSSType,
-  TextfieldTypeType,
+  TextfieldCSS,
+  TextfieldType,
 } from '@pikas-ui/textfield';
 
 export const Textfield = forwardRef<HTMLInputElement, TextfieldProps>(
-  (props, ref) => {
-    return <TextfieldPikasUI ref={ref} {...props} />;
-  }
+  (props, ref) => <TextfieldPikasUI ref={ref} {...props} />
 );

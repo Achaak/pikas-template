@@ -27,6 +27,11 @@
     "dev": {
       "cache": false
     },
+    "common#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "env": ["NEXT_PUBLIC_ENVIRONMENT"]
+    },
     "database#build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"],

@@ -8,9 +8,9 @@ const DEFAULT_USERS = [
     name: "Tim Apple",
     email: "tim@apple.com",
   },
-] as Array<Partial<User>>;
+] as Partial<User>[];
 
-(async () => {
+async function seed(): Promise<void> {
   try {
     await Promise.all(
       DEFAULT_USERS.map((user) =>
@@ -33,4 +33,6 @@ const DEFAULT_USERS = [
   } finally {
     await prisma.$disconnect();
   }
-})();
+}
+
+seed();

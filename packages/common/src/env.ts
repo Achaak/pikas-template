@@ -1,4 +1,4 @@
-export type Env = 'prod' | 'dev';
+export type Env = 'dev' | 'prod';
 
 export const getEnv = (): Env => {
   const env = process.env.NODE_ENV;
@@ -56,7 +56,7 @@ export const getLink = ({
   app: 'app' | 'lp';
   env?: Env;
 }): string => {
-  env = env || getEnvWindow();
+  env = env ?? getEnvWindow();
 
   let envStr = '';
   if (env === 'dev') {
@@ -77,7 +77,13 @@ export const getLink = ({
     protocol = 'http://';
   }
 
-  path = path ? (path.startsWith('/') ? path : `/${path}`) : '';
+  if (path) {
+    if (!path.startsWith('/')) {
+      path = `/${path}`;
+    }
+  } else {
+    path = '';
+  }
 
   return `${protocol}${subdomain}${envStr}${domain}${path}`;
 };

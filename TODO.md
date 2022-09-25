@@ -1,10 +1,10 @@
 - [] Remove env value
 - [] convert les builds avec tsup avec incremental
 - [] prisma data proxy (edge)
-- [] add @acme/ for names
 - [] handle exports fields from packages
 - [] maybe add pnpm fetch in docker images
 - [] use onSuccess on tsup instead of nodemon
+- [] verifier pipeline turbo (pre-lint etc)
 
 ```json
 "main": "./build/cjs/index.js",

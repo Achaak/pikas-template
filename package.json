@@ -29,10 +29,12 @@
     "start:docker": "docker-compose -f docker-compose.yml up -d"
   },
   "devDependencies": {
+    "eslint": "^8.24.0",
     "eslint-config-custom": "workspace:*",
     "husky": "^8.0.0",
+    "prettier": "^2.7.1",
     "tsx": "^3.9.0",
-    "turbo": "^1.5.1"
+    "turbo": "^1.5.3"
   },
   "engines": {
     "npm": ">=7.0.0",
@@ -42,5 +44,5 @@
     "schema": "packages/database/prisma/schema.prisma",
     "seed": "tsx packages/database/src/seed.ts"
   },
-  "packageManager": "pnpm@7.12.1"
+  "packageManager": "pnpm@7.12.2"
 }

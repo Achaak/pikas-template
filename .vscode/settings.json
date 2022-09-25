@@ -13,8 +13,5 @@
     // For ESLint
     "source.fixAll.eslint": true
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "cSpell.words": ["Typesafe"]
 }

@@ -50,11 +50,11 @@ const Child = styled('div', {
   },
 });
 
-interface CustomProps {
+type CustomProps = {
   children?: React.ReactNode;
-}
+};
 
-export const AppLayout: React.FC<CustomProps> = ({ children }) => {
+export const AppLayout: React.FC<CustomProps> = ({ children }) => (
   // const { data, status } = useSession({
   //   required: true,
   //   onUnauthenticated: () => signIn(),
@@ -75,15 +75,13 @@ export const AppLayout: React.FC<CustomProps> = ({ children }) => {
   //     )}
   //   </>
   // );
-  return (
-    <>
-      {
-        <Container>
-          <Content>
-            <Child>{children}</Child>
-          </Content>
-        </Container>
-      }
-    </>
-  );
-};
+  <>
+    {
+      <Container>
+        <Content>
+          <Child>{children}</Child>
+        </Content>
+      </Container>
+    }
+  </>
+);
