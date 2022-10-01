@@ -1,15 +1,16 @@
 import type { Namespaces } from '../i18n/i18n-types';
 import { loadNamespaceAsync } from '../i18n/i18n-util.async';
-import React, { useEffect } from 'react';
+import { FC, ReactNode, useEffect } from 'react';
 import { useI18nContext } from '../i18n/i18n-react';
 
 export type NamespaceLoaderProviderProps = {
   namespaces?: Namespaces[];
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
-export const NamespaceLoaderProvider: React.FC<
-  NamespaceLoaderProviderProps
-> = ({ namespaces, children }) => {
+export const NamespaceLoaderProvider: FC<NamespaceLoaderProviderProps> = ({
+  namespaces,
+  children,
+}) => {
   const { setLocale, locale } = useI18nContext();
 
   useEffect(() => {

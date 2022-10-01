@@ -1,7 +1,7 @@
 import { useI18nContext } from '@pikas-template/translate';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { NextSeo } from 'next-seo';
-import React, { useCallback } from 'react';
+import { FC, ReactNode, useCallback } from 'react';
 import { AppLayout } from '../components/layouts/app';
 import { HomeContainer } from '../components/pages/home';
 import { globalNamespaces } from '../configs/globalNamespaces';
@@ -9,7 +9,7 @@ import { trpc } from '../utils/trpc';
 
 import type { NextPageWithLayout } from './_app';
 
-const AuthShowcase: React.FC = () => {
+const AuthShowcase: FC = () => {
   const { data: secretMessage } = trpc.protected.getSecretMessage.useQuery();
 
   const { data: sessionData } = useSession();
@@ -53,9 +53,7 @@ const Home: NextPageWithLayout = () => {
   );
 };
 
-Home.getLayout = (page: React.ReactNode): React.ReactNode => (
-  <AppLayout>{page}</AppLayout>
-);
+Home.getLayout = (page: ReactNode): ReactNode => <AppLayout>{page}</AppLayout>;
 
 Home.namespaces = [...globalNamespaces];
 

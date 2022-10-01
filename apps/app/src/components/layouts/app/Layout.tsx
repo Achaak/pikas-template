@@ -1,5 +1,5 @@
 import { styled } from '@pikas-template/ui/dist/core/pikas-ui/Styles';
-import React from 'react';
+import { FC, ReactNode } from 'react';
 
 const Container = styled('div', {
   backgroundColor: '$BACKGROUND',
@@ -49,10 +49,10 @@ const Child = styled('div', {
 });
 
 type CustomProps = {
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
-export const AppLayout: React.FC<CustomProps> = ({ children }) => (
+export const AppLayout: FC<CustomProps> = ({ children }) => (
   // const { data, status } = useSession({
   //   required: true,
   //   onUnauthenticated: () => signIn(),
