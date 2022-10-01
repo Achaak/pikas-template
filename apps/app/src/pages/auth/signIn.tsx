@@ -12,7 +12,7 @@ import {
   signIn,
 } from 'next-auth/react';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { useI18nContext } from '@pikas-template/translate';
 import { AuthLayout } from '../../components/layouts/auth';
 import { globalNamespaces } from '../../configs/globalNamespaces';
@@ -156,7 +156,7 @@ const SignIn: NextPageWithLayout<
   );
 };
 
-SignIn.getLayout = (page: React.ReactNode): React.ReactNode => (
+SignIn.getLayout = (page: ReactNode): ReactNode => (
   <AuthLayout>{page}</AuthLayout>
 );
 

@@ -18,6 +18,7 @@
     "dev": "tsup --watch",
     "generate": "prisma generate",
     "format": "prisma format && prettier --cache --write \"**/*.{ts,tsx}\"",
+    "pre-lint": "pnpm generate && pnpm build",
     "lint": "cross-env TIMING=1 eslint src --fix",
     "prebuild": "pnpm run generate",
     "predev": "pnpm run generate",

@@ -1,6 +1,6 @@
-import type React from 'react';
+import type { FC } from 'react';
 
-export const MetaHead: React.FC = () => (
+export const MetaHead: FC = () => (
   <>
     <meta charSet="utf-8" />
     <link

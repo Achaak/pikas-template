@@ -5,7 +5,7 @@ import type {
   Locales,
   Namespaces,
 } from '@pikas-template/translate/dist/i18n/i18n-types';
-import { CustomTypesafeI18n } from '@pikas-template/translate/dist/CustomTypesafeI18n/NamespaceProvider';
+import { CustomTypesafeI18n } from '@pikas-template/translate/dist/CustomTypesafeI18n/namespaceProvider';
 import {
   baseLocale,
   detectLocale,
@@ -16,7 +16,7 @@ import { SessionProvider } from 'next-auth/react';
 import { DefaultSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import React, { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import SEO from '../../next-seo.config';
 import { PikasUIProvider } from '@pikas-template/ui/dist/core/pikas-ui/Styles';
 import type { Session } from 'next-auth';
@@ -28,7 +28,7 @@ import { trpc } from '../utils/trpc';
 export type NextPageWithLayout<
   T extends Record<string, unknown> = Record<string, unknown>
 > = NextPage<T> & {
-  getLayout?: (page: React.ReactNode) => React.ReactNode;
+  getLayout?: (page: ReactNode) => ReactNode;
   namespaces?: Namespaces[];
 };
 
@@ -46,7 +46,7 @@ const MyApp = ({
   router,
 }: AppPropsWithLayout): JSX.Element => {
   const getLayout =
-    Component.getLayout ?? ((page: React.ReactNode): React.ReactNode => page);
+    Component.getLayout ?? ((page: ReactNode): ReactNode => page);
 
   const [locale, setLocale] = useState<Locales | undefined>(undefined);
 

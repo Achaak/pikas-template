@@ -1,5 +1,5 @@
 import { styled } from '@pikas-template/ui/dist/core/pikas-ui/Styles';
-import React from 'react';
+import { FC, ReactNode } from 'react';
 
 const Container = styled('div', {
   position: 'absolute',
@@ -36,10 +36,10 @@ const Content = styled('div', {
 });
 
 type CustomProps = {
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
-export const AuthLayout: React.FC<CustomProps> = ({ children }) => (
+export const AuthLayout: FC<CustomProps> = ({ children }) => (
   <Container>
     <Content>{children}</Content>
   </Container>
