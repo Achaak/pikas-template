@@ -1,10 +1,10 @@
 import { createTRPCProxyClient, httpBatchLink, loggerLink } from '@trpc/client';
 import { createTRPCNext } from '@trpc/next';
-import { env } from '../env/server.mjs';
 import type {} from '../pages/api/trpc/[trpc]';
 import type { AppRouter } from '../server/routers/_app';
+import superjson from 'superjson';
 
-function getBaseUrl(): string {
+const getBaseUrl = (): string => {
   if (typeof window !== 'undefined') {
     // browser should use relative path
     return '';
@@ -15,16 +15,18 @@ function getBaseUrl(): string {
   }
   if (process.env.RENDER_INTERNAL_HOSTNAME) {
     // reference for render.com
-    return `http://${process.env.RENDER_INTERNAL_HOSTNAME}:${process.env.PORT}`;
+    return `http://${process.env.RENDER_INTERNAL_HOSTNAME}:${
+      process.env.PORT ?? 3000
+    }`;
   }
   // assume localhost
   return `http://localhost:${process.env.PORT ?? 3000}`;
-}
+};
 
 const links = [
   loggerLink({
     enabled: (opts) =>
-      env.NODE_ENV === 'development' ||
+      process.env.NODE_ENV === 'development' ||
       (opts.direction === 'down' && opts.result instanceof Error),
   }),
   httpBatchLink({
@@ -38,12 +40,14 @@ const links = [
 
 export const trpcProxy = createTRPCProxyClient<AppRouter>({
   links,
+  transformer: superjson,
 });
 
 export const trpc = createTRPCNext<AppRouter>({
-  config({ ctx }) {
+  config() {
     return {
       links,
+      transformer: superjson,
       /**
        * @link https://react-query-v3.tanstack.com/reference/QueryClient
        **/

@@ -26,12 +26,13 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@pikas-ui/button": "^3.1.0",
-    "@pikas-ui/icons": "^3.1.0",
-    "@pikas-ui/loader": "^3.1.0",
-    "@pikas-ui/styles": "^3.1.0",
-    "@pikas-ui/text": "^4.0.9",
-    "@pikas-ui/textfield": "^3.1.0",
+    "@pikas-ui/button": "^3.1.2",
+    "@pikas-ui/icons": "^3.1.2",
+    "@pikas-ui/loader": "^3.1.2",
+    "@pikas-ui/styles": "^3.2.0",
+    "@pikas-ui/text": "^4.1.0",
+    "@pikas-ui/textfield": "^3.1.2",
+    "@stitches/react": "^1.2.8",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -45,6 +46,6 @@
     "eslint-config-custom": "workspace:*",
     "prettier": "^2.7.1",
     "tsup": "^6.2.3",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.4"
   }
 }

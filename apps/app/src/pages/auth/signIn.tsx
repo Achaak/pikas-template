@@ -3,15 +3,21 @@ import { Textfield } from '@pikas-template/ui/dist/components/inputs/textfield/i
 import { IconByName } from '@pikas-template/ui/dist/core/pikas-ui/Icons';
 import { getLink } from '@pikas-template/router/dist/app';
 import { styled } from '@pikas-template/ui/dist/core/pikas-ui/Styles';
-import type { GetServerSideProps } from 'next';
-import type { Provider } from 'next-auth/providers';
-import { getCsrfToken, getProviders, signIn } from 'next-auth/react';
+import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import {
+  ClientSafeProvider,
+  getCsrfToken,
+  getProviders,
+  LiteralUnion,
+  signIn,
+} from 'next-auth/react';
 import Link from 'next/link';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useI18nContext } from '@pikas-template/translate';
 import { AuthLayout } from '../../components/layouts/auth';
 import { globalNamespaces } from '../../configs/globalNamespaces';
 import type { NextPageWithLayout } from '../_app';
+import { BuiltInProviderType } from 'next-auth/providers';
 
 const ProviderContainer = styled('div', {
   display: 'flex',
@@ -75,10 +81,9 @@ const ButtonMore = styled('button', {
 
 const MAX_PROVIDER = 3;
 
-const SignIn: NextPageWithLayout<{
-  providers: Provider | null;
-  csrfToken: string | undefined;
-}> = ({ providers, csrfToken }) => {
+const SignIn: NextPageWithLayout<
+  InferGetServerSidePropsType<typeof getServerSideProps>
+> = ({ providers, csrfToken }) => {
   const { LL } = useI18nContext();
   const [moreClicked, setMoreClicked] = useState(false);
 
@@ -120,7 +125,13 @@ const SignIn: NextPageWithLayout<{
                   signIn(provider.id, {
                     callbackUrl: getLink('home'),
                     redirect: true,
-                  });
+                  })
+                    .then(() => {
+                      //
+                    })
+                    .catch((e) => {
+                      console.error(e);
+                    });
                 }}
               >
                 {provider.name}
@@ -145,13 +156,23 @@ const SignIn: NextPageWithLayout<{
   );
 };
 
-SignIn.getLayout = (page: React.ReactNode): React.ReactNode => {
-  return <AuthLayout>{page}</AuthLayout>;
-};
+SignIn.getLayout = (page: React.ReactNode): React.ReactNode => (
+  <AuthLayout>{page}</AuthLayout>
+);
 
 SignIn.namespaces = [...globalNamespaces, 'app_signIn'];
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+type Props = {
+  providers: Record<
+    LiteralUnion<BuiltInProviderType>,
+    ClientSafeProvider
+  > | null;
+  csrfToken: string | undefined;
+};
+
+export const getServerSideProps: GetServerSideProps<Props> = async (
+  context
+) => {
   const providers = await getProviders();
   const csrfToken = await getCsrfToken(context);
 

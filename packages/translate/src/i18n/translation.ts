@@ -1,7 +1,7 @@
-import type { Locales } from '../index.js';
-import type { TranslationFunctions } from './i18n-types.js';
-import { baseLocale, detectLocale, i18nObject } from './i18n-util.js';
-import { loadLocale } from './i18n-util.sync.js';
+import type { Locales } from '../index';
+import type { TranslationFunctions } from './i18n-types';
+import { baseLocale, detectLocale, i18nObject } from './i18n-util';
+import { loadLocale } from './i18n-util.sync';
 import { htmlLangAttributeDetector } from 'typesafe-i18n/detectors';
 
 export const locale = (): Locales =>

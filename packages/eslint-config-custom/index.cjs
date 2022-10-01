@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   env: {
     browser: true,
@@ -11,7 +13,8 @@ module.exports = {
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:@typescript-eslint/strict",
     "plugin:github/recommended",
-    "plugin:import/recommended",
+		"plugin:import/recommended",
+		"plugin:import/typescript",
     "turbo",
     "prettier",
     "plugin:prettier/recommended",
@@ -19,17 +22,24 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2021,
-    project: "./tsconfig.json",
+    project: ["./packages/*/tsconfig.json", "./apps/*/tsconfig.json"],
+    tsconfigRootDir: path.resolve(__dirname, "../../"),
     sourceType: "module",
   },
   plugins: [
-    "github",
     "@typescript-eslint",
+    "github",
     "json-format",
     "promise",
     "import",
     "prettier",
-  ],
+	],
+	"settings": {
+    "import/resolver": {
+			typescript: true,
+			node: true
+    }
+  },
   rules: {
     "prefer-const": "error",
     eqeqeq: "error",
@@ -69,7 +79,7 @@ module.exports = {
     "prefer-spread": "error",
     "prefer-template": "error",
     "symbol-description": "error",
-    "no-duplicate-imports": "error",
+    "import/no-duplicates": ["error", { considerQueryString: true }],
     "no-unreachable-loop": "error",
     "@typescript-eslint/member-ordering": "error",
     "@typescript-eslint/method-signature-style": "error",
@@ -77,7 +87,6 @@ module.exports = {
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
     "@typescript-eslint/no-dynamic-delete": "error",
     "@typescript-eslint/no-floating-promises": "error",
-    "@typescript-eslint/no-implicit-any-catch": "error",
     "@typescript-eslint/no-require-imports": "error",
     "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
     "@typescript-eslint/no-unnecessary-condition": "error",
@@ -109,6 +118,7 @@ module.exports = {
     "github/no-then": 0,
     "eslint-comments/no-use": 0,
     "import/default": "error",
+    // "import/extensions": ["error", "ignorePackages"], ONLY ESM
     "prettier/prettier": 0,
     "i18n-text/no-en": 0,
   },

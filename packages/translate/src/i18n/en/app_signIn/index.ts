@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { BaseTranslation } from '../../i18n-types.js';
+import { BaseTranslation } from '../../i18n-types';
 
 const en_app_signIn: BaseTranslation = {
   email: {

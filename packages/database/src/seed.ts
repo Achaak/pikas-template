@@ -10,21 +10,28 @@ const DEFAULT_USERS = [
   },
 ] as Partial<User>[];
 
-async function seed(): Promise<void> {
+const seed = async (): Promise<void> => {
   try {
     await Promise.all(
-      DEFAULT_USERS.map((user) =>
-        prisma.user.upsert({
-          where: {
-            email: user.email!,
-          },
-          update: {
-            ...user,
-          },
-          create: {
-            ...user,
-          },
-        })
+      DEFAULT_USERS.map(async (user) =>
+        prisma.user
+          .upsert({
+            where: {
+              email: user.email!,
+            },
+            update: {
+              ...user,
+            },
+            create: {
+              ...user,
+            },
+          })
+          .then((u) => {
+            console.log(`Created user: ${u.name ?? u.id}`);
+          })
+          .catch((error) => {
+            console.error(error);
+          })
       )
     );
   } catch (error) {
@@ -33,6 +40,6 @@ async function seed(): Promise<void> {
   } finally {
     await prisma.$disconnect();
   }
-}
+};
 
-seed();
+void seed();

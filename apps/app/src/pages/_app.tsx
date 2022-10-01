@@ -5,7 +5,7 @@ import type {
   Locales,
   Namespaces,
 } from '@pikas-template/translate/dist/i18n/i18n-types';
-import { CustomTypesafeI18n } from '@pikas-template/translate/dist/CustomTypesafeI18n/namespaceProvider';
+import { CustomTypesafeI18n } from '@pikas-template/translate/dist/CustomTypesafeI18n/NamespaceProvider';
 import {
   baseLocale,
   detectLocale,
@@ -22,7 +22,6 @@ import { PikasUIProvider } from '@pikas-template/ui/dist/core/pikas-ui/Styles';
 import type { Session } from 'next-auth';
 import { StoreProvider } from '../store/hooks';
 import { store } from '../store/store';
-import { usePWA } from '../hooks/usePWA';
 import { MetaHead } from '../components/global/MetaHead';
 import { trpc } from '../utils/trpc';
 
@@ -36,9 +35,9 @@ export type NextPageWithLayout<
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 } & {
-  pageProps: {
+  pageProps: AppProps['pageProps'] & {
     session?: Session | null | undefined;
-  } & AppProps['pageProps'];
+  };
 };
 
 const MyApp = ({
@@ -54,12 +53,12 @@ const MyApp = ({
   customGlobalCss();
 
   useEffect(() => {
-    const l = detectLocale(() => [router.locale || baseLocale]);
+    const l = detectLocale(() => [router.locale ?? baseLocale]);
 
-    loadLocaleAsync(l).then(() => setLocale(l));
+    loadLocaleAsync(l)
+      .then(() => setLocale(l))
+      .catch((e) => console.error(e));
   }, [router.locale]);
-
-  usePWA();
 
   return (
     <>

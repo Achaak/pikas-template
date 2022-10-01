@@ -1,5 +1,5 @@
-import type * as trpc from '@trpc/server';
-import type * as trpcNext from '@trpc/server/adapters/next';
+import type { inferAsyncReturnType } from '@trpc/server';
+import type { CreateNextContextOptions } from '@trpc/server/adapters/next';
 import { unstable_getServerSession as getServerSession } from 'next-auth';
 import { prisma } from '@pikas-template/database';
 import { authOptions as nextAuthOptions } from '../pages/api/auth/[...nextauth]';
@@ -8,10 +8,7 @@ import { authOptions as nextAuthOptions } from '../pages/api/auth/[...nextauth]'
  * Creates context for an incoming request
  * @link https://trpc.io/docs/context
  */
-export const createContext = async ({
-  req,
-  res,
-}: trpcNext.CreateNextContextOptions) => {
+export const createContext = async ({ req, res }: CreateNextContextOptions) => {
   const session = await getServerSession(req, res, nextAuthOptions);
 
   return {
@@ -22,4 +19,4 @@ export const createContext = async ({
   };
 };
 
-export type Context = trpc.inferAsyncReturnType<typeof createContext>;
+export type Context = inferAsyncReturnType<typeof createContext>;

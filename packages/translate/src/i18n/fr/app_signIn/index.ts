@@ -1,5 +1,5 @@
 /* eslint-disable */
-import type { NamespaceAppSignInTranslation } from '../../i18n-types.js';
+import type { NamespaceAppSignInTranslation } from '../../i18n-types';
 
 const fr_app_signIn: NamespaceAppSignInTranslation = {
   email: {

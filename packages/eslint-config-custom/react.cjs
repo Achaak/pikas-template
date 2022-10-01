@@ -1,5 +1,5 @@
 module.exports = {
-  extends: [require.resolve("./index"), "plugin:react/recommended"],
+  extends: [require.resolve("./index.cjs"), "plugin:react/recommended"],
   plugins: ["react"],
   settings: {
     react: {

@@ -14,7 +14,7 @@ const withBundleAnalyzer = WithBundleAnalyzer({
 });
 const withPWA = WithPWA({
   disable: env.NODE_ENV === 'development',
-  dest: 'public',
+	dest: 'public'
 });
 
 const plugins = [withTM, withBundleAnalyzer, withPWA];

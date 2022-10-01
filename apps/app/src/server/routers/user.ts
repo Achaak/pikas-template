@@ -1,7 +1,7 @@
 import { TRPCError } from '@trpc/server';
 import { z } from 'zod';
 import { selectUser } from '../../selector/user';
-import { t } from './_app';
+import { t } from '../routers/trpc';
 
 export const userRouter = t.router({
   byId: t.procedure

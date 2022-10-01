@@ -1,6 +1,3 @@
-stories
-**/*.scss
 node_modules
-.vscode
-lib
 dist
+.eslintrc.cjs

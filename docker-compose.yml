@@ -38,7 +38,7 @@ services:
       - app_network
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSOWRD: postgres
+      POSTGRES_PASSWORD: postgres
     volumes:
       - database:/var/lib/postgresql/data
 

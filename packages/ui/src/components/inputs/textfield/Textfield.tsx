@@ -13,3 +13,5 @@ export type {
 export const Textfield = forwardRef<HTMLInputElement, TextfieldProps>(
   (props, ref) => <TextfieldPikasUI ref={ref} {...props} />
 );
+
+Textfield.displayName = 'Textfield';

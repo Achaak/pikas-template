@@ -1,7 +1,6 @@
 import { createTheme } from '@pikas-ui/styles';
 
-// TODO - remove any
-export const themeDark: any = createTheme({
+export const themeDark = createTheme({
   colors: {
     PRIMARY_DARKER: '#A8D0FF',
     PRIMARY_DARK: '#7DB9FF',

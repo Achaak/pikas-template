@@ -1,7 +1,9 @@
 import { createTheme } from '@pikas-ui/styles';
+// TODO: Remove the workaround whenever MS fixes the issue
+// https://github.com/microsoft/TypeScript/issues/48212
+import type {} from '@stitches/react';
 
-// TODO - remove any
-export const themeDefault: any = createTheme({
+export const themeDefault = createTheme({
   colors: {
     PRIMARY_DARKER: '#295180',
     PRIMARY_DARK: '#3D79BF',

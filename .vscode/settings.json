@@ -2,7 +2,6 @@
   "files.eol": "\n",
   "editor.tabSize": 2,
   "files.autoSave": "onFocusChange",
-  "editor.formatOnSave": true,
   "typescript.implementationsCodeLens.enabled": true,
   "typescript.referencesCodeLens.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -10,8 +9,9 @@
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
   "editor.codeActionsOnSave": {
-    // For ESLint
-    "source.fixAll.eslint": true
+    "source.fixAll": true
   },
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  // "eslint.workingDirectories": ["./packages/*", "./apps/*"],
   "cSpell.words": ["Typesafe"]
 }

@@ -1,5 +1,5 @@
 import { TRPCError } from '@trpc/server';
-import { t } from '../routers/_app';
+import { t } from '../routers/trpc';
 
 export const isAuth = t.middleware(async ({ ctx, next }) => {
   if (!ctx.session || !ctx.session.user) {

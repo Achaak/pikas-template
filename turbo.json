@@ -34,8 +34,13 @@
     },
     "database#build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**"],
-      "env": ["NODE_ENV"]
+      "outputs": [".next/**"],
+			"env": ["NODE_ENV"]
+    },
+    "app#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"],
+			"env": ["NODE_ENV", "RENDER_INTERNAL_HOSTNAME", "VERCEL_URL", "PORT"]
     },
     "db:migrate:deploy": {
       "outputs": []

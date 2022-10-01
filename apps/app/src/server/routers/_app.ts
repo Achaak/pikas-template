@@ -1,9 +1,6 @@
-import { initTRPC } from '@trpc/server';
-import type { Context } from '../context';
 import { protectedExampleRouter } from './protected';
+import { t } from './trpc';
 import { userRouter } from './user';
-
-export const t = initTRPC.context<Context>().create();
 
 export const appRouter = t.router({
   user: userRouter,

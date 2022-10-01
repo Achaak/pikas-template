@@ -1,10 +1,10 @@
 {
   "name": "@pikas-template/prettier",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "index.cjs",
   "license": "MIT",
   "files": [
-    "index.js"
+    "index.cjs"
   ],
   "scripts": {
     "clean": "rm -rf .turbo node_modules"
