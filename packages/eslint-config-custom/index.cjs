@@ -3,8 +3,9 @@ const path = require("path");
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es2022: true,
     node: true,
+    jest: true,
   },
   extends: [
     "eslint:recommended",
@@ -13,15 +14,20 @@ module.exports = {
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:@typescript-eslint/strict",
     "plugin:github/recommended",
-		"plugin:import/recommended",
-		"plugin:import/typescript",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "turbo",
     "prettier",
     "plugin:prettier/recommended",
   ],
+	ignorePatterns: [
+    "node_modules",
+    "build",
+    "dist",
+    "public"
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: 2021,
     project: ["./packages/*/tsconfig.json", "./apps/*/tsconfig.json"],
     tsconfigRootDir: path.resolve(__dirname, "../../"),
     sourceType: "module",
@@ -33,16 +39,17 @@ module.exports = {
     "promise",
     "import",
     "prettier",
-	],
-	"settings": {
+  ],
+  settings: {
     "import/resolver": {
-			typescript: true,
-			node: true
-    }
+      typescript: true,
+      node: true,
+    },
   },
   rules: {
     "prefer-const": "error",
-    eqeqeq: "error",
+		eqeqeq: "error",
+		"prettier/prettier": "error",
     "lines-between-class-members": "error",
     curly: "error",
     "no-constant-condition": "error",
@@ -119,7 +126,6 @@ module.exports = {
     "eslint-comments/no-use": 0,
     "import/default": "error",
     // "import/extensions": ["error", "ignorePackages"], ONLY ESM
-    "prettier/prettier": 0,
     "i18n-text/no-en": 0,
   },
 };

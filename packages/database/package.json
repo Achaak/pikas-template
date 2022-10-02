@@ -18,7 +18,7 @@
     "dev": "tsup --watch",
     "generate": "prisma generate",
     "format": "prisma format && prettier --cache --write \"**/*.{ts,tsx}\"",
-    "pre-lint": "pnpm generate && pnpm build",
+    "prelint": "pnpm generate && pnpm build",
     "lint": "cross-env TIMING=1 eslint src --fix",
     "prebuild": "pnpm run generate",
     "predev": "pnpm run generate",
@@ -28,6 +28,7 @@
     "@prisma/client": "^4.4.0"
   },
   "devDependencies": {
+		"@pikas-template/prettier": "workspace:*",
     "@pikas-template/tsconfig": "workspace:*",
     "@types/node": "^18.7.23",
     "cross-env": "^7.0.3",

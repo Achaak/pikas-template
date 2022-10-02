@@ -1,12 +1,12 @@
-import { prisma } from ".";
+import { prisma } from '.';
 
-import type { User } from "@prisma/client";
+import type { User } from '@prisma/client';
 
 const DEFAULT_USERS = [
   // Add your own user to pre-populate the database with
   {
-    name: "Tim Apple",
-    email: "tim@apple.com",
+    name: 'Tim Apple',
+    email: 'tim@apple.com',
   },
 ] as Partial<User>[];
 

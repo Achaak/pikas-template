@@ -21,7 +21,7 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "format": "prettier --cache --write \"**/*.{ts,tsx,.md}\"",
-    "pre-lint": "pnpm build",
+    "prelint": "pnpm build",
     "lint": "cross-env TIMING=1 eslint src --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },

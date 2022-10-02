@@ -13,7 +13,7 @@
     "format": "prettier --cache --write \"./**/*.{ts,tsx}\"",
     "i18n": "typesafe-i18n",
     "i18n:noWatch": "typesafe-i18n --no-watch",
-    "pre-lint": "pnpm build",
+    "prelint": "pnpm build",
     "lint": "cross-env TIMING=1 eslint src --fix",
     "clean": "rm -rf .turbo node_modules dist",
     "build": "run-s build:tsc i18n:noWatch",

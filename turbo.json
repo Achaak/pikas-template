@@ -9,11 +9,8 @@
       "outputs": ["coverage/**"],
       "dependsOn": []
     },
-    "pre-lint": {
-      "dependsOn": ["^build"]
-    },
     "lint": {
-      "dependsOn": ["^pre-lint"]
+      "dependsOn": []
     },
     "start": {
       "dependsOn": ["^build"]
@@ -35,12 +32,12 @@
     "database#build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**"],
-			"env": ["NODE_ENV"]
+      "env": ["NODE_ENV"]
     },
     "app#build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"],
-			"env": ["NODE_ENV", "RENDER_INTERNAL_HOSTNAME", "VERCEL_URL", "PORT"]
+      "outputs": [".next/**"],
+      "env": ["NODE_ENV", "RENDER_INTERNAL_HOSTNAME", "VERCEL_URL", "PORT"]
     },
     "db:migrate:deploy": {
       "outputs": []
