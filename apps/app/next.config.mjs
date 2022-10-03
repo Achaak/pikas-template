@@ -14,7 +14,7 @@ const withBundleAnalyzer = WithBundleAnalyzer({
 });
 const withPWA = WithPWA({
   disable: env.NODE_ENV === 'development',
-	dest: 'public'
+  dest: 'public',
 });
 
 const plugins = [withTM, withBundleAnalyzer, withPWA];
@@ -34,7 +34,7 @@ function defineNextConfig(config) {
 export default defineNextConfig({
   swcMinify: true,
   reactStrictMode: true,
-  output: 'standalone',
+  output: process.platform !== 'win32' ? 'standalone' : undefined,
   experimental: {
     outputFileTracingRoot: join(__dirname, '../../'),
   },
