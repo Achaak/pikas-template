@@ -5,7 +5,7 @@ import type {
   Locales,
   Namespaces,
 } from '@pikas-template/translate/dist/i18n/i18n-types';
-import { CustomTypesafeI18n } from '@pikas-template/translate/dist/CustomTypesafeI18n/namespaceProvider';
+import { CustomTypesafeI18n } from '@pikas-template/translate/dist/CustomTypesafeI18n/index';
 import {
   baseLocale,
   detectLocale,

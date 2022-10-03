@@ -1,13 +1,13 @@
-import type { Namespaces } from '../i18n/i18n-types';
-import { loadNamespaceAsync } from '../i18n/i18n-util.async';
+import { useI18nContext } from '../../i18n/i18n-react.js';
+import type { Namespaces } from '../../i18n/i18n-types.js';
+import { loadNamespaceAsync } from '../../i18n/i18n-util.async.js';
 import { FC, ReactNode, useEffect } from 'react';
-import { useI18nContext } from '../i18n/i18n-react';
 
-export type NamespaceLoaderProviderProps = {
+export type NamespaceProviderProps = {
   namespaces?: Namespaces[];
   children?: ReactNode;
 };
-export const NamespaceLoaderProvider: FC<NamespaceLoaderProviderProps> = ({
+export const NamespaceProvider: FC<NamespaceProviderProps> = ({
   namespaces,
   children,
 }) => {

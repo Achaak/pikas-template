@@ -29,12 +29,12 @@ importers:
       '@pikas-template/tsconfig': workspace:*
       '@pikas-template/ui': workspace:*
       '@reduxjs/toolkit': ^1.8.5
-      '@tanstack/react-query': ^4.7.1
+      '@tanstack/react-query': ^4.9.0
       '@trpc/client': 10.0.0-proxy-beta.2
       '@trpc/next': 10.0.0-proxy-beta.2
       '@trpc/react': 10.0.0-proxy-beta.2
       '@trpc/server': 10.0.0-proxy-beta.2
-      '@types/node': ^18.7.23
+      '@types/node': ^18.8.0
       '@types/react': 18.0.21
       '@types/workbox-sw': ^4.3.2
       cross-env: ^7.0.3
@@ -62,10 +62,10 @@ importers:
       '@pikas-template/translate': link:../../packages/translate
       '@pikas-template/ui': link:../../packages/ui
       '@reduxjs/toolkit': 1.8.5_kuo2ie247izvzll3jejufdtq3q
-      '@tanstack/react-query': 4.8.0_biqbaboplfbrettd7655fr4n2y
+      '@tanstack/react-query': 4.9.0_biqbaboplfbrettd7655fr4n2y
       '@trpc/client': 10.0.0-proxy-beta.2_igwqil3kejdm7wdrjsuyactfdq
-      '@trpc/next': 10.0.0-proxy-beta.2_2oafmdphzx5hjyj4tgv6b4j3eu
-      '@trpc/react': 10.0.0-proxy-beta.2_ymq26gxmubkfczmpjpzmu6yyme
+      '@trpc/next': 10.0.0-proxy-beta.2_foitrlypw4fxnj4lojbqtb2ylq
+      '@trpc/react': 10.0.0-proxy-beta.2_qsyntldcq5b5cdro2ort45lci4
       '@trpc/server': 10.0.0-proxy-beta.2
       next: 12.3.1_6tziyx3dehkoeijunclpkpolha
       next-auth: 4.12.2_azq6kxkn3od7qdylwkyksrwopy
@@ -81,7 +81,7 @@ importers:
       '@next/bundle-analyzer': 12.3.1
       '@pikas-template/prettier': link:../../packages/prettier
       '@pikas-template/tsconfig': link:../../packages/tsconfig
-      '@types/node': 18.7.23
+      '@types/node': 18.8.0
       '@types/react': 18.0.21
       '@types/workbox-sw': 4.3.2
       cross-env: 7.0.3
@@ -97,7 +97,7 @@ importers:
     specifiers:
       '@pikas-template/prettier': workspace:*
       '@pikas-template/tsconfig': workspace:*
-      '@types/node': ^18.7.23
+      '@types/node': ^18.8.0
       cross-env: ^7.0.3
       eslint: ^8.24.0
       eslint-config-custom: workspace:*
@@ -107,7 +107,7 @@ importers:
     devDependencies:
       '@pikas-template/prettier': link:../prettier
       '@pikas-template/tsconfig': link:../tsconfig
-      '@types/node': 18.7.23
+      '@types/node': 18.8.0
       cross-env: 7.0.3
       eslint: 8.24.0
       eslint-config-custom: link:../eslint-config-custom
@@ -120,7 +120,7 @@ importers:
       '@pikas-template/prettier': workspace:*
       '@pikas-template/tsconfig': workspace:*
       '@prisma/client': ^4.4.0
-      '@types/node': ^18.7.23
+      '@types/node': ^18.8.0
       cross-env: ^7.0.3
       eslint: ^8.24.0
       eslint-config-custom: workspace:*
@@ -134,7 +134,7 @@ importers:
     devDependencies:
       '@pikas-template/prettier': link:../prettier
       '@pikas-template/tsconfig': link:../tsconfig
-      '@types/node': 18.7.23
+      '@types/node': 18.8.0
       cross-env: 7.0.3
       eslint: 8.24.0
       eslint-config-custom: link:../eslint-config-custom
@@ -204,7 +204,7 @@ importers:
       '@pikas-template/prettier': workspace:*
       '@pikas-template/tsconfig': workspace:*
       '@pikas-utils/router': ^1.0.2
-      '@types/node': ^18.7.23
+      '@types/node': ^18.8.0
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
       cross-env: ^7.0.3
@@ -219,7 +219,7 @@ importers:
     devDependencies:
       '@pikas-template/prettier': link:../prettier
       '@pikas-template/tsconfig': link:../tsconfig
-      '@types/node': 18.7.23
+      '@types/node': 18.8.0
       '@types/react': 18.0.21
       '@types/react-dom': 18.0.6
       cross-env: 7.0.3
@@ -233,7 +233,7 @@ importers:
     specifiers:
       '@pikas-template/prettier': workspace:*
       '@pikas-template/tsconfig': workspace:*
-      '@types/node': ^18.7.23
+      '@types/node': ^18.8.0
       '@types/react': ^18.0.21
       cross-env: ^7.0.3
       eslint: ^8.24.0
@@ -250,7 +250,7 @@ importers:
     devDependencies:
       '@pikas-template/prettier': link:../prettier
       '@pikas-template/tsconfig': link:../tsconfig
-      '@types/node': 18.7.23
+      '@types/node': 18.8.0
       cross-env: 7.0.3
       eslint: 8.24.0
       eslint-config-custom: link:../eslint-config-custom
@@ -2562,12 +2562,12 @@ packages:
     dependencies:
       tslib: 2.4.0
 
-  /@tanstack/query-core/4.8.0:
-    resolution: {integrity: sha512-PVcSqAWboFA86eNgtHTOjfHjBkNuFGAM6kPH82p1ibx1R76f7EjedZ+LZi4ZnW4ppoSl/+hUtCgWsiNQ2ViLTw==}
+  /@tanstack/query-core/4.9.0:
+    resolution: {integrity: sha512-Vl0jAWJR3A1md0PoPMoEd6+H1dlRB5NqXDBNF+MZEgjQsR0Nly2kJgJj0Zh6eRDndnn7VlspxTWoOpt+dwDdAA==}
     dev: false
 
-  /@tanstack/react-query/4.8.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-e3QzL/S8XeA5MYqOUUABet4oZDBc1MbeUIo32r0cxEDoDJS+9oqx0az9AbBxacZ7SjM/Fy4u/eXQFBjsKGFQ6A==}
+  /@tanstack/react-query/4.9.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-M4utYjk9BRDUYbbprSsa0eExdC9NjqQ0deuHXYxQkT8l8BIVyw6yv02LQUGBdOnn/6w5xXFyQRG2slo+JhqeBg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -2578,7 +2578,7 @@ packages:
       react-native:
         optional: true
     dependencies:
-      '@tanstack/query-core': 4.8.0
+      '@tanstack/query-core': 4.9.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       use-sync-external-store: 1.2.0_react@18.2.0
@@ -2592,7 +2592,7 @@ packages:
       '@trpc/server': 10.0.0-proxy-beta.2
     dev: false
 
-  /@trpc/next/10.0.0-proxy-beta.2_2oafmdphzx5hjyj4tgv6b4j3eu:
+  /@trpc/next/10.0.0-proxy-beta.2_foitrlypw4fxnj4lojbqtb2ylq:
     resolution: {integrity: sha512-QzPDhjcjwVtzRXyzPV4nVYh0FjuaRuPVwH2iubx6voSOGlWbcDqHkJYbCGUQwJQky74cbDxPYi2ij243bwWFLw==}
     peerDependencies:
       '@tanstack/react-query': ^4.3.0
@@ -2603,9 +2603,9 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
     dependencies:
-      '@tanstack/react-query': 4.8.0_biqbaboplfbrettd7655fr4n2y
+      '@tanstack/react-query': 4.9.0_biqbaboplfbrettd7655fr4n2y
       '@trpc/client': 10.0.0-proxy-beta.2_igwqil3kejdm7wdrjsuyactfdq
-      '@trpc/react': 10.0.0-proxy-beta.2_ymq26gxmubkfczmpjpzmu6yyme
+      '@trpc/react': 10.0.0-proxy-beta.2_qsyntldcq5b5cdro2ort45lci4
       '@trpc/server': 10.0.0-proxy-beta.2
       next: 12.3.1_6tziyx3dehkoeijunclpkpolha
       react: 18.2.0
@@ -2613,7 +2613,7 @@ packages:
       react-ssr-prepass: 1.5.0_react@18.2.0
     dev: false
 
-  /@trpc/react/10.0.0-proxy-beta.2_ymq26gxmubkfczmpjpzmu6yyme:
+  /@trpc/react/10.0.0-proxy-beta.2_qsyntldcq5b5cdro2ort45lci4:
     resolution: {integrity: sha512-OKo6E9w/B3hQ3WyjB1SuI1GL2ksn16YxJdSwaA1D3ogP9ANF8jINptPMH3e4CGjCqunaJk4WahJh0wrei/lSJA==}
     peerDependencies:
       '@tanstack/react-query': ^4.3.0
@@ -2622,7 +2622,7 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
     dependencies:
-      '@tanstack/react-query': 4.8.0_biqbaboplfbrettd7655fr4n2y
+      '@tanstack/react-query': 4.9.0_biqbaboplfbrettd7655fr4n2y
       '@trpc/client': 10.0.0-proxy-beta.2_igwqil3kejdm7wdrjsuyactfdq
       '@trpc/server': 10.0.0-proxy-beta.2
       react: 18.2.0
@@ -2688,7 +2688,7 @@ packages:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 18.7.23
+      '@types/node': 18.8.0
 
   /@types/graceful-fs/4.1.5:
     resolution: {integrity: sha512-anKkLmZZ+xm4p8JWBf4hElkM4XR+EZeA2M9BAkkTldmcyDY4mbdIJnRghDJH3Ov5ooY7/UAoENtmdMSkaAd7Cw==}
@@ -2731,6 +2731,10 @@ packages:
 
   /@types/node/18.7.23:
     resolution: {integrity: sha512-DWNcCHolDq0ZKGizjx2DZjR/PqsYwAcYUJmfMWqtVU2MBMG5Mo+xFZrhGId5r/O5HOuMPyQEcM6KUBp5lBZZBg==}
+    dev: false
+
+  /@types/node/18.8.0:
+    resolution: {integrity: sha512-u+h43R6U8xXDt2vzUaVP3VwjjLyOJk6uEciZS8OSyziUQGOwmk+l+4drxcsDboHXwyTaqS1INebghmWMRxq3LA==}
 
   /@types/prettier/2.7.1:
     resolution: {integrity: sha512-ri0UmynRRvZiiUJdiz38MmIblKK+oH30MztdBVR95dv/Ubw6neWSb8u1XpRb72L4qsZOhz+L+z9JD40SJmfWow==}
@@ -2755,7 +2759,7 @@ packages:
   /@types/resolve/1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
-      '@types/node': 18.7.23
+      '@types/node': 18.8.0
     dev: false
 
   /@types/scheduler/0.16.2:
@@ -5759,7 +5763,7 @@ packages:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.7.23
+      '@types/node': 18.8.0
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: false
@@ -5768,7 +5772,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 18.7.23
+      '@types/node': 18.8.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: false

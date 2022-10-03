@@ -1,5 +1,5 @@
 /* eslint-disable */
-import type { NamespaceCommonTranslation } from '../../i18n-types';
+import type { NamespaceCommonTranslation } from '../../i18n-types.js';
 
 const fr_common: NamespaceCommonTranslation = {
   seo: {

@@ -5,24 +5,22 @@ import {
 } from '@pikas-ui/button';
 import { FC } from 'react';
 
+export type {
+  ButtonDefaultProps,
+  ButtonLinkProps,
+  ButtonProps,
+  ButtonCSS,
+} from '@pikas-ui/button';
 export {
   ButtonEffect,
   ButtonGap,
   ButtonPadding,
   ButtonTarget,
   ButtonTextTransform,
-  ButtonType,
-} from '@pikas-ui/button';
-export type {
-  ButtonDefaultProps,
-  ButtonLinkProps,
-  ButtonProps,
 } from '@pikas-ui/button';
 
-export const Button: FC<ButtonProps> = (props) => (
-  <ButtonPikasUI boxShadow="none" borderWidth={1} {...props} />
-);
+export const Button: FC<ButtonProps> = (props) => <ButtonPikasUI {...props} />;
 
 export const ButtonLink: FC<ButtonLinkProps> = (props) => (
-  <ButtonLinkPikasUI boxShadow="none" borderWidth={1} {...props} />
+  <ButtonLinkPikasUI {...props} />
 );
