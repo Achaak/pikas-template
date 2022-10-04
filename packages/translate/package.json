@@ -16,7 +16,7 @@
     "prelint": "pnpm build",
     "lint": "cross-env TIMING=1 eslint src --fix",
     "clean": "rm -rf .turbo node_modules dist",
-    "build": "run-s build:tsc i18n:noWatch",
+    "build": "run-s i18n:noWatch format build:tsc",
     "dev": "run-p build:tsc:watch i18n"
   },
   "browserslist": {
