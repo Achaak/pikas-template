@@ -1,10 +1,10 @@
 import { TRPCError } from '@trpc/server';
 import { z } from 'zod';
 import { selectUser } from '../../selector/user';
-import { t } from '../routers/trpc';
+import { router, publicProcedure } from '../routers/trpc';
 
-export const userRouter = t.router({
-  byId: t.procedure
+export const userRouter = router({
+  byId: publicProcedure
     .input(
       z.object({
         id: z.string(),

@@ -1,8 +1,8 @@
 import { protectedExampleRouter } from './protected';
-import { t } from './trpc';
+import { router } from './trpc';
 import { userRouter } from './user';
 
-export const appRouter = t.router({
+export const appRouter = router({
   user: userRouter,
   protected: protectedExampleRouter,
 });
