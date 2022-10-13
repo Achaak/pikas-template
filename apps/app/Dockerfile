@@ -18,7 +18,7 @@ COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-*.yaml .
 COPY .npmrc .
 RUN corepack enable
-RUN pnpm install -r --no-frozen-lockfile
+RUN pnpm install -r --frozen-lockfile
 
 # Build the project
 COPY --from=builder /app/out/full/ .
