@@ -9,6 +9,7 @@ RUN turbo prune --scope=@pikas-template/app --docker
 # Add lockfile and package.json's of isolated subworkspace
 FROM node:alpine AS installer
 RUN apk update
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # First install dependencies (as they change less often)
