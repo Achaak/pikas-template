@@ -120,7 +120,7 @@ const SignIn: NextPageWithLayout<
             (moreClicked || providerKey < MAX_PROVIDER) && (
               <Button
                 key={provider.name}
-                color={provider.id.toUpperCase() as never}
+                colorName={provider.id.toUpperCase() as never}
                 onClick={(): void => {
                   signIn(provider.id, {
                     callbackUrl: getLink('home'),
@@ -148,7 +148,7 @@ const SignIn: NextPageWithLayout<
 
       <Link href={getLink('home')} passHref>
         <BackContainer>
-          <IconByName name="bx:left-arrow-alt" size={20} color="BLACK" />
+          <IconByName name="bx:left-arrow-alt" size={20} colorName="BLACK" />
           <BackText>{LL.app_signIn['back-to-website']()}</BackText>
         </BackContainer>
       </Link>
