@@ -2,7 +2,7 @@ import { styled } from '@pikas-template/ui/dist/core/pikas-ui/Styles';
 import { FC, ReactNode } from 'react';
 
 const Container = styled('div', {
-  position: 'absolute',
+  position: 'fixed',
   top: 0,
   left: 0,
   right: 0,
