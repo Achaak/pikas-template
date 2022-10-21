@@ -1,5 +1,6 @@
 FROM node:alpine AS builder
 RUN apk update
+RUN apk add --no-cache libc6-compat
 # Set working directory
 WORKDIR /app
 RUN yarn global add turbo
@@ -9,7 +10,6 @@ RUN turbo prune --scope=@pikas-template/app --docker
 # Add lockfile and package.json's of isolated subworkspace
 FROM node:alpine AS installer
 RUN apk update
-RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # First install dependencies (as they change less often)
@@ -39,8 +39,5 @@ COPY --from=installer /app/apps/app/package.json .
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=installer --chown=nextjs:nodejs /app/apps/app/.next/standalone ./
 COPY --from=installer --chown=nextjs:nodejs /app/apps/app/.next/static ./apps/app/.next/static
-
-ARG DATABASE_URL
-ENV DATABASE_URL=$DATABASE_URL
 
 CMD node apps/app/server.js

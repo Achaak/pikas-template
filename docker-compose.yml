@@ -6,27 +6,20 @@ services:
     build:
       context: .
       dockerfile: ./apps/app/Dockerfile
-      args:
-        - DATABASE_URL=postgres://postgres:postgres@localhost:5432/postgres
     restart: always
     ports:
-      - 3000:3000
+      - ${APP_PORT}:${APP_PORT}
+    environment:
+      - PORT=${APP_PORT}
+      - DATABASE_URL=postgres://postgres:postgres@database:5432/postgres
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - DISCORD_ID=${DISCORD_ID}
+      - DISCORD_SECRET=${DISCORD_SECRET}
     depends_on:
-      - database
-    links:
       - database
     networks:
       - app_network
-  # api:
-  #   container_name: api
-  #   build:
-  #     context: .
-  #     dockerfile: ./apps/api/Dockerfile
-  #   restart: always
-  #   ports:
-  #     - 3001:3001
-  #   networks:
-  #     - app_network
   database:
     platform: linux/amd64
     image: postgres
