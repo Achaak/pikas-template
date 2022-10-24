@@ -1,5 +1,6 @@
 import { getCssText } from '@pikas-template/ui';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
+import { MetaHead } from '../components/global/MetaHead';
 
 class MyDocument extends Document {
   render(): JSX.Element {
@@ -20,6 +21,8 @@ class MyDocument extends Document {
             id="stitches"
             dangerouslySetInnerHTML={{ __html: getCssText() }}
           />
+
+          <MetaHead />
         </Head>
         <body>
           <Main />

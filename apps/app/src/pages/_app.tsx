@@ -15,14 +15,12 @@ import type { NextPage } from 'next';
 import { SessionProvider } from 'next-auth/react';
 import { DefaultSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
-import Head from 'next/head';
 import { ReactNode, useEffect, useState } from 'react';
 import SEO from '../../next-seo.config';
 import { PikasUIProvider } from '@pikas-template/ui/dist/core/pikas-ui/Styles';
 import type { Session } from 'next-auth';
 import { StoreProvider } from '../store/hooks';
 import { store } from '../store/store';
-import { MetaHead } from '../components/global/MetaHead';
 import { trpc } from '../utils/trpc';
 
 export type NextPageWithLayout<
@@ -62,9 +60,6 @@ const MyApp = ({
 
   return (
     <>
-      <Head>
-        <MetaHead />
-      </Head>
       <DefaultSeo {...SEO} />
       <PikasUIProvider lightTheme={themeDefault} darkTheme={themeDark}>
         <SessionProvider session={session}>

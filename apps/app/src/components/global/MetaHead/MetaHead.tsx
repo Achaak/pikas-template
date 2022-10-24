@@ -2,7 +2,6 @@ import type { FC } from 'react';
 
 export const MetaHead: FC = () => (
   <>
-    <meta charSet="utf-8" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -121,9 +120,5 @@ export const MetaHead: FC = () => (
     <link rel='apple-touch-startup-image' href='/images/apple_splash_1242.png' sizes='1242x2208' />
     <link rel='apple-touch-startup-image' href='/images/apple_splash_750.png' sizes='750x1334' />
     <link rel='apple-touch-startup-image' href='/images/apple_splash_640.png' sizes='640x1136' /> */}
-    <meta
-      name="viewport"
-      content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
-    />
   </>
 );
