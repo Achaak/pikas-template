@@ -32,7 +32,6 @@ function defineNextConfig(config) {
 }
 
 export default defineNextConfig({
-  swcMinify: true,
   reactStrictMode: true,
   output: process.platform !== 'win32' ? 'standalone' : undefined,
   experimental: {

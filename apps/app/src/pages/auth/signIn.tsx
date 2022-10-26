@@ -146,7 +146,7 @@ const SignIn: NextPageWithLayout<
         )}
       </ProviderContainer>
 
-      <Link href={getLink('home')} passHref>
+      <Link href={getLink('home')} passHref legacyBehavior>
         <BackContainer>
           <IconByName name="bx:left-arrow-alt" size={20} colorName="BLACK" />
           <BackText>{LL.app_signIn['back-to-website']()}</BackText>
