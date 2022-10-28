@@ -13,8 +13,13 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "strict": true,
-    "target": "es5"
+    "target": "es5",
+		"plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["src", "next-env.d.ts"],
+  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

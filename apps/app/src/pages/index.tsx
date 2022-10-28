@@ -23,13 +23,7 @@ const AuthShowcase: FC = () => {
       }
     };
 
-    f()
-      .then(() => {
-        //
-      })
-      .catch((e) => {
-        console.error(e);
-      });
+    void f();
   }, [sessionData]);
 
   return (
