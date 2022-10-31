@@ -19,8 +19,6 @@ import { ReactNode, useEffect, useState } from 'react';
 import SEO from '../../next-seo.config';
 import { PikasUIProvider } from '@pikas-template/ui/dist/core/pikas-ui/Styles';
 import type { Session } from 'next-auth';
-import { StoreProvider } from '../store/hooks';
-import { store } from '../store/store';
 import { trpc } from '../utils/trpc';
 
 export type NextPageWithLayout<
@@ -59,16 +57,14 @@ const MyApp = ({
       <DefaultSeo {...SEO} />
       <PikasUIProvider lightTheme={themeDefault} darkTheme={themeDark}>
         <SessionProvider session={session}>
-          <StoreProvider store={store}>
-            {locale && (
-              <CustomTypesafeI18n
-                locale={locale}
-                namespaces={Component.namespaces}
-              >
-                {getLayout(<Component {...pageProps} />)}
-              </CustomTypesafeI18n>
-            )}
-          </StoreProvider>
+          {locale && (
+            <CustomTypesafeI18n
+              locale={locale}
+              namespaces={Component.namespaces}
+            >
+              {getLayout(<Component {...pageProps} />)}
+            </CustomTypesafeI18n>
+          )}
         </SessionProvider>
       </PikasUIProvider>
     </>

@@ -24,7 +24,7 @@
     "@pikas-template/common": "workspace:*",
     "@pikas-template/prettier": "workspace:*",
     "@pikas-template/tsconfig": "workspace:*",
-    "@types/node": "^18.11.7",
+    "@types/node": "^18.11.8",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
     "cross-env": "^7.0.3",
