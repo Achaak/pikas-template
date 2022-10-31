@@ -47,6 +47,12 @@ module.exports = {
     },
   },
   rules: {
+		// https://github.com/typescript-eslint/typescript-eslint/blob/main/docs/linting/TROUBLESHOOTING.md#eslint-plugin-import
+		"import/named": "off",
+		"import/namespace": "off",
+		"import/default": "off",
+		"import/no-named-as-default-member": "off",
+		//
     "prefer-const": "error",
 		eqeqeq: "error",
 		"prettier/prettier": "error",
