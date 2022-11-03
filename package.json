@@ -9,41 +9,43 @@
   "scripts": {
     "build": "turbo build",
     "build:app": "turbo build --filter=@pikas-template/app...",
+    "build:docker": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml build --parallel",
     "build:packages": "turbo build --filter=./packages/*",
-    "dev": "turbo dev --parallel",
-    "dev:app": "turbo dev --parallel --filter=@pikas-template/app...",
-    "dev:packages": "turbo dev --parallel --filter=./packages/*",
-    "start": "turbo start --parallel",
-    "start:app": "turbo start --filter=@pikas-template/app",
-    "start:packages": "turbo start --parallel --filter=./packages/*",
-    "lint": "turbo lint",
-    "format": "turbo format",
-    "prepare": "husky install",
     "clean": "turbo clean && rm -rf node_modules",
     "db:migrate:deploy": "turbo db:migrate:deploy",
     "db:migrate:dev": "turbo db:migrate:dev",
     "db:push": "turbo db:push",
     "db:seed": "turbo db:seed",
+    "dev": "turbo dev --parallel",
+    "dev:app": "turbo dev --parallel --filter=@pikas-template/app...",
+    "dev:packages": "turbo dev --parallel --filter=./packages/*",
+    "format": "turbo format",
     "generate": "turbo generate",
-    "test": "turbo test",
-    "build:docker": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml build --parallel",
-    "start:docker": "docker-compose -f docker-compose.yml up -d"
+    "lint": "turbo lint",
+    "prepare": "husky install",
+    "start": "turbo start --parallel",
+    "start:app": "turbo start --filter=@pikas-template/app",
+    "start:docker": "docker-compose -f docker-compose.yml up -d",
+    "start:packages": "turbo start --parallel --filter=./packages/*",
+    "test": "turbo test"
   },
   "devDependencies": {
+    "@pikas-template/prettier": "workspace:*",
     "eslint": "^8.26.0",
     "eslint-config-custom": "workspace:*",
     "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "tsx": "^3.11.0",
     "turbo": "^1.6.3"
   },
+  "packageManager": "pnpm@7.12.2",
   "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=14.0.0"
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
   },
   "prisma": {
     "schema": "packages/database/prisma/schema.prisma",
     "seed": "tsx packages/database/src/seed.ts"
-  },
-  "packageManager": "pnpm@7.12.2"
+  }
 }

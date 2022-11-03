@@ -2,3 +2,4 @@ node_modules
 .next
 public
 .eslintrc.cjs
+.turbo
