@@ -10,9 +10,12 @@ import { trpc } from '../utils/trpc';
 import type { NextPageWithLayout } from './_app';
 
 const AuthShowcase: FC = () => {
-  const { data: secretMessage } = trpc.protected.getSecretMessage.useQuery();
-
   const { data: sessionData } = useSession();
+
+  const { data: secretMessage } = trpc.protected.getSecretMessage.useQuery(
+    undefined, // no input
+    { enabled: sessionData?.user !== undefined }
+  );
 
   const onClick = useCallback(() => {
     const f = async () => {

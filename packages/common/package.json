@@ -21,7 +21,7 @@
   "devDependencies": {
     "@pikas-template/prettier": "workspace:*",
     "@pikas-template/tsconfig": "workspace:*",
-    "@types/node": "^18.11.8",
+    "@types/node": "^18.11.9",
     "cross-env": "^7.0.3",
     "eslint": "^8.26.0",
     "eslint-config-custom": "workspace:*",
