@@ -22,7 +22,7 @@ export const publicProcedure = t.procedure;
  * users are logged in
  */
 const isAuth = t.middleware(async ({ ctx, next }) => {
-  if (!ctx.session || !ctx.session.user) {
+  if (!ctx?.session?.user) {
     throw new TRPCError({ code: 'UNAUTHORIZED' });
   }
   return next({
