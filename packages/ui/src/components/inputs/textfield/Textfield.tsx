@@ -1,6 +1,9 @@
 import type { TextfieldProps } from '@pikas-ui/textfield';
 import { Textfield as TextfieldPikasUI } from '@pikas-ui/textfield';
 import { forwardRef } from 'react';
+// TODO: Remove the workaround whenever MS fixes the issue
+// https://github.com/microsoft/TypeScript/issues/48212
+import {} from '@pikas-ui/icons';
 
 export type {
   textfieldPadding,

@@ -24,7 +24,6 @@ const config = {
 	output: process.platform !== 'win32' ? 'standalone' : undefined,
 	experimental: {
 		outputFileTracingRoot: join(__dirname, '../../'),
-		transpilePackages: []
 	},
 	i18n: {
 		locales: ["en", "fr"],

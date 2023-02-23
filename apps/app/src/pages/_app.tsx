@@ -49,6 +49,7 @@ const MyApp = ({
 
     loadLocaleAsync(l)
       .then(() => setLocale(l))
+      // eslint-disable-next-line no-console
       .catch((e) => console.error(e));
   }, [router.locale]);
 

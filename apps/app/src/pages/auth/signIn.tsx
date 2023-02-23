@@ -120,7 +120,6 @@ const SignIn: NextPageWithLayout<
             (moreClicked || providerKey < MAX_PROVIDER) && (
               <Button
                 key={provider.name}
-                colorName={provider.id.toUpperCase() as never}
                 onClick={(): void => {
                   signIn(provider.id, {
                     callbackUrl: getLink('home'),
@@ -130,6 +129,7 @@ const SignIn: NextPageWithLayout<
                       //
                     })
                     .catch((e) => {
+                      // eslint-disable-next-line no-console
                       console.error(e);
                     });
                 }}
@@ -148,7 +148,7 @@ const SignIn: NextPageWithLayout<
 
       <Link href={getLink('home')} passHref legacyBehavior>
         <BackContainer>
-          <IconByName name="bx:left-arrow-alt" size={20} colorName="BLACK" />
+          <IconByName name="bx:left-arrow-alt" size={20} colorName="black" />
           <BackText>{LL.app_signIn['back-to-website']()}</BackText>
         </BackContainer>
       </Link>

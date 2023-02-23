@@ -1,8 +1,8 @@
 {
   "name": "@pikas-template/prettier",
   "version": "0.0.0",
-  "main": "index.cjs",
   "license": "MIT",
+  "main": "index.cjs",
   "files": [
     "index.cjs"
   ],
@@ -10,6 +10,6 @@
     "clean": "rm -rf .turbo node_modules"
   },
   "devDependencies": {
-    "prettier": "^2.7.1"
+    "prettier": "^2.8.4"
   }
 }
