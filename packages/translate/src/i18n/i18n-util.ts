@@ -12,6 +12,7 @@ import type {
   TranslateByString,
 } from 'typesafe-i18n';
 import { detectLocale as detectLocaleFn } from 'typesafe-i18n/detectors';
+import { initExtendDictionary } from 'typesafe-i18n/utils';
 import type {
   Formatters,
   Locales,
@@ -41,6 +42,8 @@ export const loadedFormatters: Record<Locales, Formatters> = {} as Record<
   Locales,
   Formatters
 >;
+
+export const extendDictionary = initExtendDictionary<Translations>();
 
 export const i18nString = (locale: Locales): TranslateByString =>
   initI18nString<Locales, Formatters>(locale, loadedFormatters[locale]);

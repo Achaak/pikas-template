@@ -12,12 +12,12 @@ const localeTranslationLoaders = {
 
 const localeNamespaceLoaders = {
   en: {
-    app_signIn: () => import('./en/app_signIn'),
-    common: () => import('./en/common'),
+    app_signIn: () => import('./en/app_signIn/index.js'),
+    common: () => import('./en/common/index.js'),
   },
   fr: {
-    app_signIn: () => import('./fr/app_signIn'),
-    common: () => import('./fr/common'),
+    app_signIn: () => import('./fr/app_signIn/index.js'),
+    common: () => import('./fr/common/index.js'),
   },
 };
 

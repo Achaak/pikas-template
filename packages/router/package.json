@@ -10,28 +10,28 @@
   ],
   "scripts": {
     "build": "tsup",
+    "clean": "rm -rf .turbo node_modules dist",
     "dev": "tsup --watch",
     "format": "prettier --cache --write \"**/*.{ts,tsx}\"",
     "prelint": "pnpm build",
-    "lint": "cross-env TIMING=1 eslint src --fix",
-    "clean": "rm -rf .turbo node_modules dist"
+    "lint": "cross-env TIMING=1 eslint src --fix"
   },
   "dependencies": {
     "@pikas-template/common": "workspace:*",
-    "@pikas-utils/router": "^1.0.8"
+    "@pikas-utils/router": "^2.0.1"
   },
   "devDependencies": {
     "@pikas-template/common": "workspace:*",
     "@pikas-template/prettier": "workspace:*",
     "@pikas-template/tsconfig": "workspace:*",
-    "@types/node": "^18.11.9",
-    "@types/react": "18.0.24",
-    "@types/react-dom": "18.0.8",
+    "@types/node": "^18.14.1",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
     "cross-env": "^7.0.3",
-    "eslint": "8.26.0",
+    "eslint": "8.34.0",
     "eslint-config-custom": "workspace:*",
-    "prettier": "2.7.1",
-    "tsup": "^6.3.0",
-    "typescript": "4.8.4"
+    "prettier": "2.8.4",
+    "tsup": "^6.6.3",
+    "typescript": "4.9.5"
   }
 }

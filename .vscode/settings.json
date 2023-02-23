@@ -15,10 +15,13 @@
     "typescript",
     "typescriptreact"
   ],
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
   "eslint.workingDirectories": [{ "mode": "auto" }],
+
   // "eslint.workingDirectories": ["./packages/*", "./apps/*"],
   "cSpell.words": ["Typesafe"]
 }

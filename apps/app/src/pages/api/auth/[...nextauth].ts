@@ -3,7 +3,6 @@ import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import type { NextAuthOptions } from 'next-auth';
 import NextAuth from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
-// eslint-disable-next-line import/extensions
 import { env } from '../../../env/server.mjs';
 
 export const authOptions: NextAuthOptions = {

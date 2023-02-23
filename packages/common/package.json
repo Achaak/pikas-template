@@ -1,32 +1,32 @@
 {
   "name": "@pikas-template/common",
   "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "sideEffects": false,
-  "private": true,
-  "license": "MIT",
   "files": [
     "dist/**"
   ],
   "scripts": {
-    "type-check": "tsc --noEmit",
     "build": "tsup src/*.ts --format esm,cjs --dts",
+    "clean": "rm -rf .turbo node_modules dist",
     "dev": "tsup src/*.ts --format esm,cjs --watch --dts",
-    "lint": "cross-env TIMING=1 eslint src --fix",
     "format": "prettier --cache --write \"./**/*.{ts,tsx}\"",
-    "clean": "rm -rf .turbo node_modules dist"
+    "lint": "cross-env TIMING=1 eslint src --fix",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@pikas-template/prettier": "workspace:*",
     "@pikas-template/tsconfig": "workspace:*",
-    "@types/node": "^18.11.9",
+    "@types/node": "^18.14.1",
     "cross-env": "^7.0.3",
-    "eslint": "^8.26.0",
+    "eslint": "^8.34.0",
     "eslint-config-custom": "workspace:*",
-    "prettier": "2.7.1",
-    "tsup": "^6.3.0",
-    "typescript": "^4.8.4"
+    "prettier": "2.8.4",
+    "tsup": "^6.6.3",
+    "typescript": "^4.9.5"
   }
 }

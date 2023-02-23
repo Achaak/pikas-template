@@ -2,44 +2,54 @@
   "name": "@pikas-template/database",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/*": {
+      "import": "./dist/*.mjs",
+      "require": "./dist/*.js",
+      "types": "./dist/*.d.ts"
+    }
+  },
   "types": "./dist/index.d.ts",
   "files": [
-    "dist/**"
+    "dist/**/*"
   ],
   "scripts": {
-    "with-env": "dotenv -c -e ../../.env -- prisma",
+    "prebuild": "pnpm run generate",
     "build": "tsup",
     "clean": "rm -rf .turbo node_modules dist",
     "db:migrate:deploy": "pnpm with-env migrate deploy",
     "db:migrate:dev": "pnpm with-env migrate dev",
     "db:push": "pnpm with-env db push",
     "db:seed": "tsx src/seed.ts",
+    "predev": "pnpm run generate",
     "dev": "tsup --watch",
-    "generate": "prisma generate",
     "format": "prisma format && prettier --cache --write \"**/*.{ts,tsx}\"",
+    "generate": "prisma generate",
     "prelint": "pnpm generate && pnpm build",
     "lint": "cross-env TIMING=1 eslint src --fix",
-    "prebuild": "pnpm run generate",
-    "predev": "pnpm run generate",
-    "studio": "prisma studio"
+    "studio": "prisma studio",
+    "with-env": "dotenv -c -e ../../.env -- prisma"
   },
   "dependencies": {
-    "@prisma/client": "^4.5.0"
+    "@prisma/client": "^4.10.1"
   },
   "devDependencies": {
     "@pikas-template/prettier": "workspace:*",
     "@pikas-template/tsconfig": "workspace:*",
-    "@types/node": "^18.11.9",
+    "@types/node": "^18.14.1",
     "cross-env": "^7.0.3",
-    "dotenv-cli": "^6.0.0",
-    "eslint": "^8.26.0",
+    "dotenv-cli": "^7.0.0",
+    "eslint": "^8.34.0",
     "eslint-config-custom": "workspace:*",
-    "prettier": "^2.7.1",
-    "prisma": "^4.5.0",
-    "tsup": "^6.3.0",
-    "tsx": "^3.11.0",
-    "typescript": "^4.8.4"
+    "prettier": "^2.8.4",
+    "prisma": "^4.10.1",
+    "tsup": "^6.6.3",
+    "tsx": "^3.12.3",
+    "typescript": "^4.9.5"
   }
 }
