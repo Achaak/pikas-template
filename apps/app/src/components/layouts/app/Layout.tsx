@@ -2,7 +2,7 @@ import { styled } from '@pikas-template/ui/dist/core/pikas-ui/Styles';
 import { FC, ReactNode } from 'react';
 
 const Container = styled('div', {
-  backgroundColor: '$BACKGROUND',
+  backgroundColor: '$background',
   position: 'fixed',
   top: 0,
   left: 0,
@@ -38,7 +38,7 @@ const Child = styled('div', {
   customRowGap: 40,
   customColumnGap: 16,
   alignItems: 'start',
-  alignContent: 'strech',
+  alignContent: 'stretch',
   overflow: 'auto',
 
   '@md': {

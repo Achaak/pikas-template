@@ -12,7 +12,7 @@ const Container = styled('div', {
   justifyContent: 'center',
   padding: '24px 8px',
   overflow: 'auto',
-  backgroundColor: '$BACKGROUND',
+  backgroundColor: '$background',
 
   '@md': {
     padding: 32,

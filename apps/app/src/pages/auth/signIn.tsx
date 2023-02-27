@@ -24,8 +24,8 @@ const ProviderContainer = styled('div', {
   alignItems: 'center',
   justifyContent: 'center',
   flexDirection: 'column',
-  boxShadow: '$ELEVATION_BOTTOM_5',
-  backgroundColor: '$WHITE',
+  boxShadow: '$lg',
+  backgroundColor: '$white',
   padding: 32,
   br: 'lg',
   customRowGap: 8,
@@ -40,7 +40,7 @@ const BackContainer = styled('a', {
 
 const BackText = styled('span', {
   marginLeft: 8,
-  color: '$BLACK',
+  color: '$black',
 });
 
 const EmailContainer = styled('form', {
@@ -61,21 +61,21 @@ const Separator = styled('div', {
 
 const SeparatorLine = styled('div', {
   flex: 1,
-  backgroundColor: '$GRAY_DARK',
+  backgroundColor: '$gray-dark',
   height: 1,
 });
 
 const SeparatorText = styled('span', {
   padding: '0 8px',
-  color: '$GRAY_DARK',
+  color: '$gray-dark',
 });
 
 const ButtonMore = styled('button', {
   background: 'none',
   border: 'none',
-  fontSize: '$REM-SMALL',
+  fontSize: '$rem-small',
   marginTop: 8,
-  color: '$PRIMARY',
+  color: '$primary',
   cursor: 'pointer',
 });
 
